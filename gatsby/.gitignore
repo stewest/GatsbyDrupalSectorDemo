@@ -1,0 +1,9 @@
+public
+.cache
+node_modules
+cypress/videos/
+cypress/screenshots/
+.env*
+!.env.EXAMPLE
+dist
+.DS_Store
