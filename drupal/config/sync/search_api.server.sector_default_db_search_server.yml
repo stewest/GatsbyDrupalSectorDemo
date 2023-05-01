@@ -1,0 +1,19 @@
+uuid: f450b236-44e1-49e1-b133-2f62e4c37d4e
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+_core:
+  default_config_hash: ygqsq2E8-P4s1WO9rLtYVNewihK7NZQSsqtuX0xYQ4k
+id: sector_default_db_search_server
+name: 'Sector default db search server'
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  matching: words
+  autocomplete:
+    suggest_suffix: true
+    suggest_words: true

@@ -1,0 +1,19 @@
+uuid: a44c5601-b23d-4e9e-a55b-af078f4e44ca
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: os_1M8XhuH4JbRxMBxn1U5c9x7qXVh8dW4d2z0BhiIw
+id: blockquote_half_featured_float_right
+label: 'Blockquote - Half. Featured. Float right'
+description: 'Half column blockquote with a featured background floated right'
+body:
+  value: "<div class=\"element has-offset-right pull-right\">\r\n<blockquote class=\"featured\">\r\n<p>Block quotes can be&nbsp;used to emphasise excerpts of text.</p>\r\n\r\n<footer><cite>An inline citation (in HTML called a <em>cite</em>) can reference the <a href=\"https://www.sector.org.nz/documentation/sector-wysiwyg-templates\">source of a quote</a></cite></footer>\r\n</blockquote>\r\n</div>\r\n"
+  format: full_html
+weight: null
+node_types: {  }
+entity_types:
+  block_content: {  }
+  media: {  }
+  node: {  }
+  taxonomy_term: {  }

@@ -1,0 +1,17 @@
+uuid: 1b6de0ac-1b33-4255-8587-489ca220f903
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: gcgXjmIMYu9w6-_noDO8kkS84bLjW365nz7j0dHrcj4
+name: ratio_5_x_3_medium_
+label: 'Ratio 5 x 3 (Medium)'
+effects:
+  89ece2bf-36f6-4bd9-8393-3e60d39e79c1:
+    uuid: 89ece2bf-36f6-4bd9-8393-3e60d39e79c1
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 995
+      height: 597
+      anchor: center-center

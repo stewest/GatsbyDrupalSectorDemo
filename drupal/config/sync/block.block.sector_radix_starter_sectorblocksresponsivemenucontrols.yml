@@ -1,0 +1,26 @@
+uuid: 3492349e-ef30-4c70-86a7-0303f517dbf6
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - sector_blocks
+  theme:
+    - sector_radix_starter
+third_party_settings:
+  block_class:
+    classes: 'control control--responsive-menu js-offclick-whitelist'
+_core:
+  default_config_hash: lsyV8HNpxUa1kO03ToEkfRETa04Fot_Oz3J-gX8jyVY
+id: sector_radix_starter_sectorblocksresponsivemenucontrols
+theme: sector_radix_starter
+region: header
+weight: -22
+provider: null
+plugin: responsive_menu_controls
+settings:
+  id: responsive_menu_controls
+  label: 'Sector blocks - Responsive menu controls'
+  label_display: '0'
+  provider: sector_blocks
+visibility: {  }

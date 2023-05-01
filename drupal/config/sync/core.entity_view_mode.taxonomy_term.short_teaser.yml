@@ -1,0 +1,12 @@
+uuid: e87c5d40-d707-407f-a13a-e065910c4e2f
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: txpUmcZxLYWIqo0w9ZMWQ68o9wVKr4n44HgF2YmkL6o
+id: taxonomy_term.short_teaser
+label: 'Short teaser'
+targetEntityType: taxonomy_term
+cache: true

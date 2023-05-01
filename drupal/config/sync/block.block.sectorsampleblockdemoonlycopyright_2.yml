@@ -1,0 +1,28 @@
+uuid: 78c6f7c3-dc5f-45c8-a05e-0db049055b7c
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+  theme:
+    - sector_radix_starter
+third_party_settings:
+  block_class:
+    classes: 'promotion promotion--copyright'
+_core:
+  default_config_hash: GA09XDJto0_PLDmXMQ5BWGpx_t3ZKdDaaF4AvhBDbEU
+id: sectorsampleblockdemoonlycopyright_2
+theme: sector_radix_starter
+region: post_footer
+weight: -25
+provider: null
+plugin: 'block_content:cf6a24fd-dda3-47e7-88c7-b29ed1f2782d'
+settings:
+  id: 'block_content:cf6a24fd-dda3-47e7-88c7-b29ed1f2782d'
+  label: 'Sector Sample Block (demo only) - Copyright'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,21 @@
+_core:
+  default_config_hash: lDwsdzUJblw1m03dkighmzXKlmWgwUrNlGcOczwSx-k
+server_url: 'http://localhost:8000/'
+preview_callback_url: 'http://localhost:8000/__refresh'
+path_mapping: ''
+incrementalbuild_url: ''
+contentsync_url: ''
+build_published: true
+log_json: false
+custom_source_plugin: ''
+supported_entity_types:
+  - file
+  - media
+  - node
+  - path_alias
+  - taxonomy_term
+publish_private_files: null
+log_published: true
+delete_log_entities: true
+log_expiration: '604800'
+prevent_selfreferenced_entities: 0

@@ -1,0 +1,10 @@
+uuid: 0b6eaef5-8e4c-40c7-9e1d-2552acde38f1
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: TESVhxmbxGN8ZC2N8C9b53xtdNM9DOaYi-1EzfWazGw
+id: sector_short_date
+label: 'Sector short date'
+locked: false
+pattern: 'j M Y'

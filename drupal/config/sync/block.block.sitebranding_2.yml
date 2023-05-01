@@ -1,0 +1,29 @@
+uuid: bdd6b3fe-c6ab-40d8-a48b-9b12238e217a
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - system
+  theme:
+    - sector_radix_starter
+third_party_settings:
+  block_class:
+    classes: 'promotion promotion--branding'
+_core:
+  default_config_hash: LNUHLs__WTCtGFQ0l_1QrEfnPQNMiMl6LCQd2nT9y7Q
+id: sitebranding_2
+theme: sector_radix_starter
+region: post_footer
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

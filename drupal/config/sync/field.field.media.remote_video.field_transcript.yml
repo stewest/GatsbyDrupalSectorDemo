@@ -1,0 +1,33 @@
+uuid: 3fc86e51-98e6-488e-9b27-bc9ff6c37594
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_transcript
+    - media.type.remote_video
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: '0'
+    full_html: '0'
+    restricted_basic_html: restricted_basic_html
+    restricted_html: '0'
+    teaser_display_text: '0'
+    raw_html: '0'
+    plain_text: '0'
+_core:
+  default_config_hash: KfjcggJHrYKsA8ywxrzuy7pgTl5fE7Qswxes9gMo7ss
+id: media.remote_video.field_transcript
+field_name: field_transcript
+entity_type: media
+bundle: remote_video
+label: Transcript
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

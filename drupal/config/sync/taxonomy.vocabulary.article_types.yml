@@ -1,0 +1,10 @@
+uuid: 6a6a10c1-c359-4536-9cc1-da5df9871f1d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: XfFcD3TbKsZJJRiKhD1mtDXMqEI5_32DDHEmsg1RRFw
+name: 'Article category'
+vid: article_types
+description: 'Used to sort views and searches by category. <em>Terms are rabbit-holed with a /news/archive redirect<em>'
+weight: -10

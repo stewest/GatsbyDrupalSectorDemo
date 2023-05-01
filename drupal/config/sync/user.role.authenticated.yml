@@ -1,0 +1,25 @@
+uuid: 8cd51000-6f69-4cbd-be67-e4fb0dbcabd4
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - shortcut
+    - system
+    - video_embed_field
+_core:
+  default_config_hash: 6ScEsWE54j6xPElK4HIz0XKpXB3PR3dJlmYO1UT3gUA
+id: authenticated
+label: 'authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'never autoplay videos'
+  - 'post comments'
+  - 'search content'
+  - 'submit latitude/longitude'
+  - 'view files'
+  - 'view media'

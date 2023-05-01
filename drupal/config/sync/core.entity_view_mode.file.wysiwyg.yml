@@ -1,0 +1,12 @@
+uuid: cb0a773a-e0ad-401f-8105-cb730e2b83a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+_core:
+  default_config_hash: TsMr0SLf0jTd8208y0scZDjxQi5RHOJSM8uIQBV_sns
+id: file.wysiwyg
+label: wysiwyg
+targetEntityType: file
+cache: true

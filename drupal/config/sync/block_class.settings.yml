@@ -1,0 +1,22 @@
+_core:
+  default_config_hash: u2wQ4ot4t4xKOJKWxoKwelgzx8j37Ve5SQ0qqxtVXlQ
+maxlength_block_class_field: 255
+field_type: multiple_textfields
+default_case: standard
+block_classes_stored: '{"promotion":"promotion","promotion--copyright":"promotion--copyright","local-tasks":"local-tasks","promotion--branding":"promotion--branding","hidden-print":"hidden-print","back-to-top":"back-to-top","mt-4":"mt-4","mt-lg-0":"mt-lg-0","mb-4":"mb-4","mb-lg-6":"mb-lg-6","ml-auto":"ml-auto","d-print-none":"d-print-none","navigation":"navigation","navigation--quaternary":"navigation--quaternary","mb-5":"mb-5","mb-sm-0":"mb-sm-0","":"","mt-sm-2":"mt-sm-2","d-inline-block":"d-inline-block","navigation--mega-menu":"navigation--mega-menu","py-4":"py-4","py-xl-5":"py-xl-5","control":"control","control--fly-out-search":"control--fly-out-search","js-offclick-whitelist":"js-offclick-whitelist","control--responsive-menu":"control--responsive-menu","navigation--site-map":"navigation--site-map","navigation--primary":"navigation--primary","promotion--navigation-primary":"promotion--navigation-primary","is-target-for-flyout-menu":"is-target-for-flyout-menu","media--featured":"media--featured","mt-0":"mt-0","node__title":"node__title","mt-5":"mt-5","pt-5":"pt-5","pt-mg-7":"pt-mg-7","navigation--secondary":"navigation--secondary","node__banner":"node__banner","my-md-4":"my-md-4","my-lg-3":"my-lg-3","my-mg-5":"my-mg-5","last-updated":"last-updated","my-4":"my-4","my-md-6":"my-md-6","node__subtitle":"node__subtitle","h5":"h5","my-0":"my-0","pb-5":"pb-5","pb-mg-7":"pb-mg-7","h4":"h4","mb-0":"mb-0","mt-3":"mt-3","mt-6":"mt-6","promotion--news":"promotion--news","promotion--resources":"promotion--resources","my-sm-6":"my-sm-6","promotion--facet-summary":"promotion--facet-summary","promotion--facet-group":"promotion--facet-group","block-facet--checkbox":"block-facet--checkbox","border-bottom":"border-bottom","mb-6":"mb-6","search":"search","search--flyout":"search--flyout","search--primary":"search--primary","promotion--tinted":"promotion--tinted","py-5":"py-5","py-lg-6":"py-lg-6","mt-md-6":"mt-md-6","promotion--in-this-section":"promotion--in-this-section","my-lg-6":"my-lg-6"}'
+enable_attributes: true
+enable_auto_complete: true
+qty_classes_per_block: 10
+items_per_page: 50
+enable_special_chars: false
+qty_attributes_per_block: 10
+enable_id_replacement: true
+weight_attributes: 0
+weight_class: 0
+weight_id: 0
+filter_html_clean_css_identifier: ''
+maxlength_attributes: 0
+maxlength_id: 255
+attribute_keys_stored: '[]'
+attribute_value_stored: '[]'
+attributes_inline: '[]'

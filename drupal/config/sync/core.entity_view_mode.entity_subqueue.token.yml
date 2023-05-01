@@ -1,0 +1,12 @@
+uuid: 425a0832-2913-4634-ad41-605f8f6ad96f
+langcode: en
+status: true
+dependencies:
+  module:
+    - entityqueue
+_core:
+  default_config_hash: Rw4MnFMi88rho7zJ-tMpU0QExz7lApq9XzxdHuB0IH8
+id: entity_subqueue.token
+label: Token
+targetEntityType: entity_subqueue
+cache: true

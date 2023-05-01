@@ -1,0 +1,21 @@
+uuid: fd75175f-24a3-4b6d-9f33-b7e09a61f4a0
+langcode: und
+status: true
+dependencies:
+  module:
+    - link
+    - taxonomy
+_core:
+  default_config_hash: F2h4r1DQP054EplL8mau1VFqUsGBYxeW0aqS4ciGTls
+id: taxonomy_term.field_copyright_link
+field_name: field_copyright_link
+entity_type: taxonomy_term
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

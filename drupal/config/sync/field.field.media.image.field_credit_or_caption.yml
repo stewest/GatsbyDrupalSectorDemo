@@ -1,0 +1,31 @@
+uuid: 571b1021-795c-4b8b-8588-2a5fd1d427c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_credit_or_caption
+    - media.type.image
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    restricted_basic_html: restricted_basic_html
+    basic_html: '0'
+    full_html: '0'
+    restricted_html: '0'
+    teaser_display_text: '0'
+_core:
+  default_config_hash: 83MfCjFi24UnZT15WhNIEcpgGufMeiV0NC9QM5euUME
+id: media.image.field_credit_or_caption
+field_name: field_credit_or_caption
+entity_type: media
+bundle: image
+label: 'Credit or caption'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

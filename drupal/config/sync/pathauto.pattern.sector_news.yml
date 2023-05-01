@@ -1,0 +1,23 @@
+uuid: cf58e278-1eb0-4c8c-9a1c-1a134135c0f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: vDi1jf5SdieWmttSQlsuRwjVPBoKpEYj2tfFHB64XEU
+id: sector_news
+label: 'Sector news'
+type: 'canonical_entities:node'
+pattern: 'news/[node:title]'
+selection_criteria:
+  ce4459cc-aaba-4937-821e-4047c8d45147:
+    id: node_type
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: node
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,17 @@
+uuid: 8a02f768-7cee-4b35-a454-e10d0919a379
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Pn9HQF2f_4ByYoyuVdrLTWS96E4YNTzH8a3Tx2RUuEs
+name: scale_width_media_landscape
+label: 'Scale width media landscape'
+effects:
+  17d333f9-6db1-4346-95d2-0c941936d37f:
+    uuid: 17d333f9-6db1-4346-95d2-0c941936d37f
+    id: image_scale
+    weight: 1
+    data:
+      width: 804
+      height: null
+      upscale: false

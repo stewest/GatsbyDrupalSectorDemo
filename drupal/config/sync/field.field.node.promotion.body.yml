@@ -1,0 +1,33 @@
+uuid: 6dde0a8f-677c-4483-84bc-568ccab6bbeb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.promotion
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    teaser_display_text: teaser_display_text
+    basic_html: '0'
+    restricted_basic_html: '0'
+    full_html: '0'
+    restricted_html: '0'
+_core:
+  default_config_hash: EQBZhHkX9s7RlrhJPil1alfe1DESxEJgXnVcSzm2CkE
+id: node.promotion.body
+field_name: body
+entity_type: node
+bundle: promotion
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,10 @@
+uuid: 921f86b9-60bd-4308-9513-f142e65f16c2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: tJPnFIT57JxW2IzpADQbs7h_c-LJRmcYvoUYndZ_3mA
+id: sector_long_date
+label: 'Sector long date'
+locked: false
+pattern: 'l, j M Y g:ia'

@@ -1,0 +1,14 @@
+uuid: 1bf76e57-b5a7-4f53-8d0c-f7f157da6bbf
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Zihy2KnXgLy520ccv0n5QNjYZr0AqDYCmkUT2sy4sjM
+id: node
+label: Content
+tags:
+  description: '[node:summary]'
+  title: '[node:title] | [site:name]'
+  og_image_type: image/jpeg
+  og_title: '[node:title]'
+  og_description: '[node:summary]'

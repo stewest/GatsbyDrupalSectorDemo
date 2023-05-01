@@ -1,0 +1,21 @@
+uuid: e1aef52c-c916-4828-adfd-5e85b5494186
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_title
+    - media.type.remote_video
+_core:
+  default_config_hash: NaICpublHrNebzXF0dcEcDBGRwL8MZbjt57wTwKc_tM
+id: media.remote_video.field_title
+field_name: field_title
+entity_type: media
+bundle: remote_video
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

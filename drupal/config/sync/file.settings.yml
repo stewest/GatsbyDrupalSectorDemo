@@ -1,0 +1,8 @@
+_core:
+  default_config_hash: Cl_UpmrJCkbC0qa6JVBk4H4viGzqt7WE9Elsws-80_I
+description:
+  type: textfield
+  length: 128
+icon:
+  directory: core/modules/file/icons
+make_unused_managed_files_temporary: true

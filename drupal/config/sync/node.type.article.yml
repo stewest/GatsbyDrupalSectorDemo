@@ -1,0 +1,25 @@
+uuid: 22535599-b056-466b-90af-6157c53417e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - gatsby
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  wysiwyg_template:
+    default_template: ''
+  gatsby:
+    preview: true
+_core:
+  default_config_hash: DmH2TsqW9p6x5J08cs810A8I1SNr9PoD4n6NAOnCoS8
+name: News
+type: article
+description: 'Use <em>News</em> for time-sensitive content like news or press releases.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

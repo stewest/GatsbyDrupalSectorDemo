@@ -1,0 +1,12 @@
+uuid: 4cc2d04b-1603-4523-889d-a1cf912c121d
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: 31-q6Jih-KD_yhF9znT9HpKFUzkIZ_sw2VDOP59y0ic
+id: media.short_teaser
+label: 'Short teaser'
+targetEntityType: media
+cache: true

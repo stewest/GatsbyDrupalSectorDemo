@@ -1,0 +1,10 @@
+uuid: 8aa767d0-9e62-46ab-904d-12b86dc19ffb
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sIl2o0j20xeEUtwQ0QPh29YxxGCOGuO5L26CwFzX_6o
+name: 'Promotion variant'
+vid: promotion_type
+description: 'Used to define different displays of promotions across a site. <em>Terms are rabbit-holed to 403.</em>'
+weight: -5

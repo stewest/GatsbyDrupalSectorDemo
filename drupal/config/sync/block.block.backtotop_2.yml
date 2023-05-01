@@ -1,0 +1,34 @@
+uuid: da310a1f-1bd8-4c25-9c96-18ddf027a5a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - system
+  theme:
+    - sector_radix_starter
+third_party_settings:
+  block_class:
+    classes: 'back-to-top mt-4 mt-lg-0 mb-4 mb-lg-6 ml-auto d-print-none'
+_core:
+  default_config_hash: 5RybXs_0leWWsFZjslNQg7IwRmPUBPmCOpRUilR0ipw
+id: backtotop_2
+theme: sector_radix_starter
+region: post_content
+weight: -27
+provider: null
+plugin: 'block_content:79af5eed-a1cb-4da7-aeec-56d650fb196d'
+settings:
+  id: 'block_content:79af5eed-a1cb-4da7-aeec-56d650fb196d'
+  label: 'Back to top'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

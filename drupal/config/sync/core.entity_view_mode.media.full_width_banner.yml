@@ -1,0 +1,12 @@
+uuid: 66c26e95-f963-4f3e-a5b8-6ce28eac15c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: 7uHYYiru2zHe8m3WyPvnnAOz39JkI_D_F_cDf1khGyo
+id: media.full_width_banner
+label: 'Full width banner'
+targetEntityType: media
+cache: true

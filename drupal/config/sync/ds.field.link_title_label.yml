@@ -1,0 +1,13 @@
+_core:
+  default_config_hash: oanrSy1feMIS80aaPJCmlYknBrT1aXlTPCfDJ_WC9co
+id: link_title_label
+label: 'Link title label'
+ui_limit: 'promotion|*'
+properties:
+  content:
+    value: "[node:field_featured_content:title]\r\n"
+    format: full_html
+type: token
+type_label: 'Token field'
+entities:
+  node: node

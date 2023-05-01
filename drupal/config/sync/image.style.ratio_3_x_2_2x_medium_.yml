@@ -1,0 +1,17 @@
+uuid: 047e5f4c-4654-4f16-a6dd-57243b31e89b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: NxFVvYCCxF4uhcwj0Mwue4b86Q7tGIsDJVp9hrC_AO8
+name: ratio_3_x_2_2x_medium_
+label: 'Ratio 3 x 2 (2x Medium)'
+effects:
+  0369cfde-e282-4bdc-bf7b-a24d07b4b30b:
+    uuid: 0369cfde-e282-4bdc-bf7b-a24d07b4b30b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1986
+      height: 1324
+      anchor: center-center

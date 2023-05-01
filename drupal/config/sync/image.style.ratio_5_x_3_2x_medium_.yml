@@ -1,0 +1,17 @@
+uuid: cd20cb2e-eafc-4c05-9f2c-d1ac7808455d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: YuxovOUiHZQ1etQl3ieiWvMSUqrTegFh-DSFlEbKq1c
+name: ratio_5_x_3_2x_medium_
+label: 'Ratio 5 x 3 (2x Medium)'
+effects:
+  12191bf7-d464-4e90-9cc7-458e41d3670b:
+    uuid: 12191bf7-d464-4e90-9cc7-458e41d3670b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1990
+      height: 1194
+      anchor: center-center

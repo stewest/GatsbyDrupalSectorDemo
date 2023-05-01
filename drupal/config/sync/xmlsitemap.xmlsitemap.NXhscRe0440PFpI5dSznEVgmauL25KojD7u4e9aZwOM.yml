@@ -1,0 +1,9 @@
+uuid: 0e728c57-6a71-4ffe-b48e-bb29e856a64e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 76jC6JxPW3SNWhqAsY-3pdrUNpprtbw7bAFPRkWsEF8
+id: NXhscRe0440PFpI5dSznEVgmauL25KojD7u4e9aZwOM
+label: 'Sector default sitemap'
+context: {  }

@@ -1,0 +1,27 @@
+uuid: 03375557-1579-4045-a9fc-1a8bbac76c0f
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+  theme:
+    - sector_radix_starter
+third_party_settings:
+  block_class:
+    classes: local-tasks
+_core:
+  default_config_hash: 5h1wBZ0QckRDLKVUTsBoG6w_1gCNCqWu6zg4sLImKnM
+id: sector_radix_starter_local_tasks
+theme: sector_radix_starter
+region: content
+weight: -17
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

@@ -1,0 +1,31 @@
+uuid: 3f1a067b-a5d2-4054-868c-84e183a23114
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.page
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    teaser_display_text: teaser_display_text
+    basic_html: '0'
+    restricted_basic_html: '0'
+    full_html: '0'
+    restricted_html: '0'
+_core:
+  default_config_hash: iAVRa6fYF8ltzCetGk9pd7sC0795QHqxNrVRrNGH7_A
+id: node.page.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: page
+label: Subtitle
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

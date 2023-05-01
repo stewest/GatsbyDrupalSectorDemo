@@ -1,0 +1,10 @@
+uuid: e2f98f24-d1a7-405d-a2d9-c8b524b5e8e3
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: bTakCkIRCABC3zARzdcpS-OaHritG22RUapaRKtgIcI
+id: node__promotion
+label: 'Content: Promotion'
+tags:
+  robots: noindex

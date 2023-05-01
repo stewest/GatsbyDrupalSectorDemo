@@ -1,0 +1,24 @@
+uuid: b980dd34-bf73-4f70-aedb-91e6828cafdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.promotion
+_core:
+  default_config_hash: d_P-7R5s7ucwvs8xeskA9wo5tkZnVji9jbSzNkZDftc
+id: node.promotion.status
+field_name: status
+entity_type: node
+bundle: promotion
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

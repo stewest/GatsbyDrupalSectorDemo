@@ -1,0 +1,20 @@
+uuid: ee2875c4-5e89-4512-adeb-37e46353e5e8
+langcode: en
+status: true
+dependencies:
+  theme:
+    - sector_radix_starter
+_core:
+  default_config_hash: trtPbWomgfrxGkrzODzlqbE_3xQIQoeCP8iH-IdJbCM
+id: sector_radix_starter_local_actions
+theme: sector_radix_starter
+region: content
+weight: -12
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

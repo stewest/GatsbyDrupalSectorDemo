@@ -1,0 +1,17 @@
+uuid: 9020f3c9-0164-4926-995b-7e198691b50c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 4V0GfacIiSVLyh1F51YGVgQ0Ia_On5K64TWFCejVm0I
+name: ratio_16_x_6_small_
+label: 'Ratio 16 x 6 (Small)'
+effects:
+  43c6d797-1cef-489b-898b-8b72f863392b:
+    uuid: 43c6d797-1cef-489b-898b-8b72f863392b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 760
+      height: 285
+      anchor: center-center

@@ -1,0 +1,9 @@
+uuid: 785dc511-973f-44cf-a585-9c5124a572e2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ahkNDP9NyszeCpx_WJV0KEfPbSx8CIzmnauR3jpDoOM
+name: scale_width_media
+label: 'Scale width media'
+effects: {  }

@@ -1,0 +1,31 @@
+uuid: 041922fd-a8d7-4d59-9e97-d2bc036b662c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_cc_code
+    - taxonomy.vocabulary.copyright_licensing
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    teaser_display_text: teaser_display_text
+    basic_html: '0'
+    restricted_basic_html: '0'
+    full_html: '0'
+    restricted_html: '0'
+_core:
+  default_config_hash: 95au6Y74MxVHm4MfnQ_nwsTG8HfTAWMHu2XnnPp8eaw
+id: taxonomy_term.copyright_licensing.field_cc_code
+field_name: field_cc_code
+entity_type: taxonomy_term
+bundle: copyright_licensing
+label: 'CC Code'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,22 @@
+uuid: 1e213751-57cc-4b35-ac70-acd1711f9a24
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: LPIgkn9_u_HjecF6ksihd-4RCWa1jP7M2WYH0EYY0_I
+id: node.field_article_type
+field_name: field_article_type
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

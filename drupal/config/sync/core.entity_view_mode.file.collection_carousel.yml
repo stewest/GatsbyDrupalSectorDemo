@@ -1,0 +1,12 @@
+uuid: f111f3bc-0ae6-4531-b96e-284b23f706fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+_core:
+  default_config_hash: oD0d9dIiNPXtDH8mSJOaXbBVZRl_-NSCbqFSaufJA0E
+id: file.collection_carousel
+label: collection_carousel
+targetEntityType: file
+cache: true

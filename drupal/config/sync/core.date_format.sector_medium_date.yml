@@ -1,0 +1,10 @@
+uuid: d0210355-be21-4aab-9d6c-8f02bb34e540
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dWeZ67j95PDAfTfjL3bKweHMxG7614bO0T-0bn2CBWE
+id: sector_medium_date
+label: 'Sector medium date'
+locked: false
+pattern: 'D j M Y'

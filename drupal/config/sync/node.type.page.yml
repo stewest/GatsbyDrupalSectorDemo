@@ -1,0 +1,27 @@
+uuid: a40751d9-c34e-4fe0-b652-45b9f0b420fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - gatsby
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+      - main-menu
+    parent: 'main-menu:'
+  wysiwyg_template:
+    default_template: ''
+  gatsby:
+    preview: true
+_core:
+  default_config_hash: QHKBUHB6R-a1dqfRBw_3Axg7kMm7iVFO1g9uLdbR6mY
+name: Page
+type: page
+description: 'Use <em>Page</em> for hierarchical content e.g. content organised in menus. '
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

@@ -1,0 +1,30 @@
+uuid: 22921d8d-2d37-43f4-a02e-5a3b8fe7cc89
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_files
+    - media.type.file
+    - node.type.resource
+_core:
+  default_config_hash: PVPmdmiEOk2gfHqyVm2HDg1hnj-ZdNzWrFnXnBu4gy4
+id: node.resource.field_related_files
+field_name: field_related_files
+entity_type: node
+bundle: resource
+label: 'Related files'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      file: file
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

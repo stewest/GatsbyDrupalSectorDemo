@@ -1,0 +1,29 @@
+uuid: b4d1fc34-c815-4741-9d8d-455915a32dfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sector_sitewide_search
+  module:
+    - block_class
+    - views
+  theme:
+    - sector_radix_starter
+third_party_settings:
+  block_class:
+    classes: 'search search--flyout d-print-none'
+_core:
+  default_config_hash: L06-s2DC9j0xkae71j2rFyPRsNpyJ7JDiH24XHqyaWo
+id: sector_radix_starter_exposedformsector_sitewide_searchpage_1_2
+theme: sector_radix_starter
+region: header
+weight: -19
+provider: null
+plugin: 'views_exposed_filter_block:sector_sitewide_search-page_1'
+settings:
+  id: 'views_exposed_filter_block:sector_sitewide_search-page_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility: {  }

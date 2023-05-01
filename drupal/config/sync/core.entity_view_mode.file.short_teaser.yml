@@ -1,0 +1,12 @@
+uuid: e8cd979d-f6ff-48ff-a477-d649ba9e9bc7
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+_core:
+  default_config_hash: heWkFGQhEvoSsTy8WPRYoH_-A9FiI1NfM37ACbs91Ik
+id: file.short_teaser
+label: 'Short teaser'
+targetEntityType: file
+cache: true

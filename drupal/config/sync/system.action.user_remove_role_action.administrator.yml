@@ -1,0 +1,14 @@
+uuid: dc7765d6-edef-494a-923e-671c9be86195
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.administrator
+  module:
+    - user
+id: user_remove_role_action.administrator
+label: 'Remove the Drupal site builder (site architects and developers) role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: administrator

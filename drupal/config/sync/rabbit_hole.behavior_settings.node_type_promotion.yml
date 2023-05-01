@@ -1,0 +1,14 @@
+uuid: 3e3b9380-9a76-4c61-a85e-2bcf2eff7e45
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: EtD35yxj_y9bp56KI7sPq0cUIDvKvZG-P_sx3_tNWMA
+id: node_type_promotion
+entity_type_id: null
+entity_id: null
+action: page_redirect
+allow_override: 1
+redirect: /
+redirect_code: 301
+redirect_fallback_action: null

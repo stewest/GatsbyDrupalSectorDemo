@@ -1,0 +1,22 @@
+uuid: 3d49df60-f30e-4e24-b3df-2523be09355e
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: sQb1iovkImmxU53vq6_kOcKX6ZpGBA1TP8EXUzn1G2w
+id: node.field_copyright_license
+field_name: field_copyright_license
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

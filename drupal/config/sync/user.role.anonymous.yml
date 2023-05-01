@@ -1,0 +1,22 @@
+uuid: eb79f4b6-2308-404e-aa9d-a20f0f75a630
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - system
+    - video_embed_field
+_core:
+  default_config_hash: ngldcw0wWYkzMxJ9N-ZbpkoW62YjXfVL1GgWuUTxUr8
+id: anonymous
+label: 'anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'never autoplay videos'
+  - 'post comments'
+  - 'search content'
+  - 'view files'
+  - 'view media'

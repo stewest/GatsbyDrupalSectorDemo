@@ -1,0 +1,23 @@
+uuid: e2b4767a-7d31-41fd-b59a-c8dd2ee97b5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: g7RjM35eyZQb5hLYvmLNyH3EHfww9tpJlpUTJBOQfew
+id: sector_image
+label: 'Sector image'
+type: 'canonical_entities:media'
+pattern: 'image/[media:field_title]'
+selection_criteria:
+  f1e3c0d1-0b23-48e2-83fa-9981cd95bd65:
+    id: 'entity_bundle:media'
+    bundles:
+      image: image
+    negate: false
+    context_mapping:
+      media: media
+selection_logic: and
+weight: -5
+relationships: {  }

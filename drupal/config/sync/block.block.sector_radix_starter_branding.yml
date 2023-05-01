@@ -1,0 +1,25 @@
+uuid: c1872b67-49b2-42d4-940d-e6835d0166b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sector_radix_starter
+_core:
+  default_config_hash: OIbh04bhZ1weQETmMK0X8nS5FImvd7eziltvL6JfgS4
+id: sector_radix_starter_branding
+theme: sector_radix_starter
+region: header
+weight: -23
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

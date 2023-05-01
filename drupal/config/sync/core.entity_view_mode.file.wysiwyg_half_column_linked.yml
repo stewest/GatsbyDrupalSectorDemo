@@ -1,0 +1,12 @@
+uuid: dbe3e978-3c8a-41fd-95e0-2a3f1a5d4988
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+_core:
+  default_config_hash: IFeSi4SzoFr3vtRV6FZWFxEl3O3zxqV43vhEg_WUP_g
+id: file.wysiwyg_half_column_linked
+label: wysiwyg_half_column_linked
+targetEntityType: file
+cache: true

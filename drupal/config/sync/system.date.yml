@@ -1,0 +1,11 @@
+_core:
+  default_config_hash: a6WjenBw009pi-eiXip5xVxVec-VHcq_1Ad4uHV0UEQ
+country:
+  default: NZ
+first_day: 1
+timezone:
+  default: Pacific/Auckland
+  user:
+    configurable: false
+    warn: false
+    default: 0

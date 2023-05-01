@@ -1,0 +1,14 @@
+uuid: b6934362-5a52-4398-a56f-2fa8f039e8b7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: uzB9R2Ml4dtpp1mFgXzijU5USOtW0yaaCumZU3YOB88
+id: taxonomy_vocabulary_copyright_licensing
+entity_type_id: null
+entity_id: null
+action: access_denied
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: null

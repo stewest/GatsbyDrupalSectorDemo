@@ -1,0 +1,35 @@
+uuid: 32dabf23-eb0e-4b18-9c91-f7712a639caf
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.content_type
+  module:
+    - block_class
+    - facets
+    - system
+  theme:
+    - sector_radix_starter
+third_party_settings:
+  block_class:
+    classes: 'promotion--facet-group block-facet--checkbox border-bottom mt-4 mt-lg-0 mb-6 mb-sm-0'
+_core:
+  default_config_hash: FXJb-GlRwXKnuRRtJcy-UIbcFWkT1BgMivVjd3U0cUY
+id: contenttype_2
+theme: sector_radix_starter
+region: sidebar
+weight: 0
+provider: null
+plugin: 'facet_block:content_type'
+settings:
+  id: 'facet_block:content_type'
+  label: 'Filter by type'
+  label_display: visible
+  provider: facets
+  block_id: contenttype_2
+visibility:
+  request_path:
+    id: request_path
+    pages: /search
+    negate: false
+    context_mapping: {  }

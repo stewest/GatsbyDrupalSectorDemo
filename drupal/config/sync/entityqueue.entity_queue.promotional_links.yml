@@ -1,0 +1,26 @@
+uuid: a54e6223-915c-465d-8095-14ba95b53370
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 7o7kyzCrhkxRiNjUYM9Hh2egQODkmdQqP1jZSeZO5X4
+id: promotional_links
+label: 'Popular links'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 6
+  max_size: 9
+  act_as_queue: false
+  reverse_in_admin: false

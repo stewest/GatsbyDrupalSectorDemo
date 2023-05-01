@@ -1,0 +1,19 @@
+uuid: 2cd87243-65de-464c-831f-3b9b34512f16
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: n_fC0QCPeZ3J15l9V6a4v4mOGmVxI5GpExT_fgVBnwc
+name: Resource
+type: resource
+description: 'Use <em>Resource</em> for single page resources and to add documents.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

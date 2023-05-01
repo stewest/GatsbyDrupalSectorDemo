@@ -1,0 +1,20 @@
+uuid: d8d8a0c6-e701-441c-aaf8-973a9900e628
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.resource
+_core:
+  default_config_hash: 25AjFcw533e5H5uqywmHbQe8uGcjzHTWdwAzJslWWG4
+id: node.resource.title
+field_name: title
+entity_type: node
+bundle: resource
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

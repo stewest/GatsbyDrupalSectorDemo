@@ -1,0 +1,22 @@
+uuid: 74b550a2-4e84-47cf-a3f4-0208e70e3674
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sector_radix_starter
+_core:
+  default_config_hash: PKq7KqWEaaPg6Pnpid29iHqsU_yKEikxeBg0oGCWzcc
+id: sector_radix_starter_messages
+theme: sector_radix_starter
+region: content
+weight: -18
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

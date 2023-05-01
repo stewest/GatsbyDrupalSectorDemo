@@ -1,0 +1,31 @@
+uuid: b571a69d-d6bf-46a6-86a8-42b20291f6b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_cc_licence_long
+    - taxonomy.vocabulary.copyright_licensing
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    teaser_display_text: teaser_display_text
+    basic_html: '0'
+    restricted_basic_html: '0'
+    full_html: '0'
+    restricted_html: '0'
+_core:
+  default_config_hash: 4T5qjXvV_VOqH-wUQpXkwLLPzFrfcxGF4pbjkgh4LWo
+id: taxonomy_term.copyright_licensing.field_cc_licence_long
+field_name: field_cc_licence_long
+entity_type: taxonomy_term
+bundle: copyright_licensing
+label: 'CC Licence Long'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

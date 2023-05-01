@@ -1,0 +1,20 @@
+uuid: afa4edb4-902c-41ac-9850-01cb6d23f928
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article
+_core:
+  default_config_hash: r8-WKnktkFyfT8B4oq_AqpNacFrQ8SHVZhuz7pCayH0
+id: node.article.title
+field_name: title
+entity_type: node
+bundle: article
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

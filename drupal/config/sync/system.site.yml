@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: HVkfMcGWojupvYR6TkwXH5zjJvtbgTA6nvtusYcWGbE
+name: 'Drupal & Gatsby'
+mail: weststew+demo@gmail.com
+slogan: ''
+page:
+  403: /node/14
+  404: /node/5
+  front: /node/10
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+mail_notification: ''
+uuid: 140d0114-58b9-42e0-a580-e8a5d9edd6ae

@@ -1,0 +1,17 @@
+uuid: 7c029571-88c9-4139-8fc2-0fef687ba5a4
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: oXspEl97MIOXqZiIUyLMFjMYJkASc4vyzP-7JF0s-R4
+name: ratio_16_x_6_2x_xlarge_
+label: 'Ratio 16 x 6 (2x XLarge)'
+effects:
+  bf1f6030-a709-485a-87bc-deeaf2abf152:
+    uuid: bf1f6030-a709-485a-87bc-deeaf2abf152
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2800
+      height: 1050
+      anchor: center-center

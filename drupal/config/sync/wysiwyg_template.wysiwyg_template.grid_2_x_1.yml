@@ -1,0 +1,19 @@
+uuid: f33b55d0-9b5b-4bc7-882b-5cdd85eff03f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: gRXHlaDTo34txsE7Nr732DiA938r2e8RcWbh21fbVjI
+id: grid_2_x_1
+label: 'Grid - 2 x 1'
+description: 'A multi-purpose responsive 2 x 1 grid'
+body:
+  value: "<div class=\"row\">\r\n<div class=\"col-md-6\">\r\nLayout your content in a 2 column grid.\r\n</div>\r\n<div class=\"col-md-6\">\r\nLayout your content in a 2 column grid.\r\n</div>\r\n</div>"
+  format: full_html
+weight: null
+node_types: {  }
+entity_types:
+  block_content: {  }
+  media: {  }
+  node: {  }
+  taxonomy_term: {  }

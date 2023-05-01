@@ -1,0 +1,21 @@
+uuid: 6bc8e8f3-783f-41f2-a4f1-4746b47bc455
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_title
+    - media.type.image
+_core:
+  default_config_hash: zGpPxGOVst_JEb-na6__PKxRfkyMDUHtfNTL8k20OaQ
+id: media.image.field_title
+field_name: field_title
+entity_type: media
+bundle: image
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,10 @@
+uuid: 73e876ce-01f3-48ac-8681-4306e8515ba4
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: DAMCmMUkr1k_fHkqxHO2-VCbbGbrSjefaAQS3ODgAqA
+id: main-menu
+label: 'Main menu'
+description: 'Menu for <em>hierarchical content</em> based on main content sections. (Sector Starter Kit.)'
+locked: false

@@ -1,0 +1,10 @@
+uuid: c1d527ea-fffc-461b-80c1-297f7421e1b8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 8cTJntyGiPKJ29OMZhUfBzact1_h81wAGwjv_DJBDpE
+name: 'Copyright and Licensing'
+vid: copyright_licensing
+description: 'Optional taxonomy with data fields. Used to assign default copyright settings to content. <em>Terms are rabbit-holed to 403.<em>'
+weight: -4

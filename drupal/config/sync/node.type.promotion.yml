@@ -1,0 +1,22 @@
+uuid: 306cf21e-3e3e-4e21-8c52-7d75534964b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  wysiwyg_template:
+    default_template: ''
+_core:
+  default_config_hash: O_11imWMlihwH_o5xXUKcL8wW-10WyiDDYoCgEa1wLo
+name: Promotion
+type: promotion
+description: 'Use <em>Promotion</em> to create promotional and supporting content elements for display throughout your site.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,10 @@
+uuid: c3e7e10f-37c2-440d-8f2c-50d3c4903051
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: LsquM0eqPpROtGEiqNvEqLtz7-Its_lYYgfUkTrrLoY
+id: user
+label: User
+tags:
+  robots: noindex

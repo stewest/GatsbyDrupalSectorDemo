@@ -1,0 +1,12 @@
+uuid: a76f3fd6-02fe-422e-a58e-6b1274741e7e
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+_core:
+  default_config_hash: 5RRgxtPpdoLtnMYyzeF6iLqml-swU-VKHkk8I0HRVhQ
+id: file.preview
+label: preview
+targetEntityType: file
+cache: true

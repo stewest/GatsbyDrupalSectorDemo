@@ -1,0 +1,17 @@
+uuid: 3f7e696b-2616-42f0-bbd8-7ccb99e71e54
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: EaG9hu1o4s8NugoGTUg_S2RSSzZgZByeF1ieY6Rqz1w
+name: ratio_3_x_2_2x_small_
+label: 'Ratio 3 x 2 (2x Small)'
+effects:
+  82e2562d-debc-4250-8600-8e829ea94de6:
+    uuid: 82e2562d-debc-4250-8600-8e829ea94de6
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1464
+      height: 976
+      anchor: center-center

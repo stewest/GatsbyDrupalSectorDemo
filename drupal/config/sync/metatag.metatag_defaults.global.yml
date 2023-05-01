@@ -1,0 +1,13 @@
+uuid: d379226f-8340-49ae-9015-9c3e84736e06
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: C52f5TckEKZOE1a_fRXfCSrxCYY9QiR_wm0muAerU8c
+id: global
+label: Global
+tags:
+  canonical_url: '[current-page:url]'
+  shortlink: '[current-page:url:unaliased]'
+  title: '[current-page:title] | [site:name]'
+  og_url: '[current-page:url]'

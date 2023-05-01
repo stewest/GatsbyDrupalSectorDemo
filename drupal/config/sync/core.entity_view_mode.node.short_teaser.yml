@@ -1,0 +1,12 @@
+uuid: 1e8a3aa2-f202-4b0d-928d-ad4d0cc556aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: NeDmAlrvF9H_KEp_A2scrz9v7QHAfzCBFs06vzU16yQ
+id: node.short_teaser
+label: 'Short teaser'
+targetEntityType: node
+cache: true

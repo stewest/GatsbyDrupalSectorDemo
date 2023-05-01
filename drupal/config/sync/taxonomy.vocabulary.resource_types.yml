@@ -1,0 +1,10 @@
+uuid: 864eb12a-c6f6-41b9-9681-57eb5975ff5a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: spEugfWG4xYEe-ZWj2Ia2QRCs5kLA-yKqwF3Pq8AJhA
+name: 'Resource category'
+vid: resource_types
+description: 'Used to sort views and searches by category. <em>Terms are rabbit-holed with a /resources redirect<em>'
+weight: -9

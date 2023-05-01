@@ -1,0 +1,30 @@
+uuid: 3b5b0254-5c84-4028-9785-87c7ad6fa7aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser
+    - media.type.image
+    - node.type.page
+_core:
+  default_config_hash: 8rmYEQ1PD5cT1B_jsCCAdEqY5SDwBB4E_dhk9f11C8s
+id: node.page.field_teaser
+field_name: field_teaser
+entity_type: node
+bundle: page
+label: Teaser
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

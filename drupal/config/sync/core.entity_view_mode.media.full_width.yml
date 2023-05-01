@@ -1,0 +1,12 @@
+uuid: 7bc0712f-da5f-4545-8493-a9b5019c0fda
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: H-P-4E4vyFpiJr2QVw-nN3zGZgnTM7Qdk2lSeacVM0Y
+id: media.full_width
+label: 'Full width'
+targetEntityType: media
+cache: true

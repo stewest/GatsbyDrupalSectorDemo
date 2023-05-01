@@ -1,0 +1,14 @@
+uuid: 9d8110dc-0264-41e9-993e-790a9a39cf05
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: xujgYyLKppm4XEeUZPhulpai76BvPbooy4NmYYwHL7g
+id: taxonomy_vocabulary_promotion_type
+entity_type_id: null
+entity_id: null
+action: access_denied
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: null

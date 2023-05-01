@@ -1,0 +1,14 @@
+uuid: 91470acf-4ae2-45b4-b189-409745e3fad9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ifnfKU_mpftIeWmvgBYHlDZLmzaBcfB1UCd6Qh5HCeg
+id: taxonomy_vocabulary_article_types
+entity_type_id: null
+entity_id: null
+action: page_redirect
+allow_override: 1
+redirect: '/news/archive?category=[term:tid]'
+redirect_code: 301
+redirect_fallback_action: null

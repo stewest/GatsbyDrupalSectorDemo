@@ -1,0 +1,102 @@
+{
+    "name": "sparksinteractive/sector-project",
+    "type": "project",
+    "description": "A composer-based Drupal project template using Sector.",
+    "homepage": "https://www.sector.org.nz",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Sparks Interactive",
+            "role": "Development"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.2",
+        "cweagans/composer-patches": "~1.0",
+        "drupal/core-composer-scaffold": "^9.5",
+        "drupal/core-recommended": "^9.5",
+        "drupal/gatsby": "^2.0@RC",
+        "drupal/key_auth": "^2.1",
+        "drupal/sector_tonic": "^1.0",
+        "drush/drush": "^10.0",
+        "oomphinc/composer-installers-extender": "^2.0",
+        "sparksinteractive/sector-distribution": "^9.5"
+    },
+    "require-dev": {
+        "drupal/core-dev": "^9.5"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "drupal/core-composer-scaffold": true,
+            "cweagans/composer-patches": true,
+            "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "oomphinc/composer-installers-extender": true
+        }
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
+            }
+        },
+        "enable-patching": true,
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
+        }
+    },
+    "repositories": {
+        "packagist.drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        "asset.packagist": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
+        "ckeditor-plugin/templates": {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/templates",
+                "version": "4.16.0",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/templates/releases/templates_4.16.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        "ckeditor-plugin/link": {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/link",
+                "version": "4.16.0",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/link/releases/link_4.16.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        "ckeditor-plugin/fakeobjects": {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/fakeobjects",
+                "version": "4.16.2",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.16.2.zip",
+                    "type": "zip"
+                }
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

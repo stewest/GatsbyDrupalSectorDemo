@@ -1,0 +1,21 @@
+uuid: 4fe808d6-14ae-4fff-9697-2a335d3d3ec8
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - text
+_core:
+  default_config_hash: _zEGfTQRQ-ChV0m350Qn7ofnOnYaAMOTCFwEYNr-cf4
+id: media.field_transcript
+field_name: field_transcript
+entity_type: media
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

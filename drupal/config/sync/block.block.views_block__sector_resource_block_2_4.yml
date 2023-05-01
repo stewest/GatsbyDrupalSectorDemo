@@ -1,0 +1,38 @@
+uuid: 7816e3a5-1eb1-4fb7-9bed-9311a8ce73df
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sector_resource
+  module:
+    - block_class
+    - node
+    - views
+  theme:
+    - sector_radix_starter
+third_party_settings:
+  block_class:
+    classes: 'mt-6 mt-lg-0'
+_core:
+  default_config_hash: FZrO1fVU2v6ZgAWIIjSB_ZqUm65GOB3g0Hcl1CggGRI
+id: views_block__sector_resource_block_2_4
+theme: sector_radix_starter
+region: sidebar
+weight: 0
+provider: null
+plugin: 'views_block:sector_resource-block_2'
+settings:
+  id: 'views_block:sector_resource-block_2'
+  label: 'Latest resources'
+  label_display: visible
+  provider: views
+  views_label: 'Latest resources'
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      resource: resource
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

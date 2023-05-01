@@ -1,0 +1,19 @@
+uuid: e05ca1ab-0cd1-42ec-8a42-043bbb5cc546
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: xXY1By7FXZrz-RF11Bn0HmVKJGzN3kwEPEhSEonSX1M
+id: note_default
+label: 'Note - Default'
+description: 'For other styles add extra classes. e.g: class="note note--primary”. Or: note--success, note--info, note--warning, note--danger'
+body:
+  value: "<div aria-label=\"Information\" class=\"note\" role=\"note\">\r\n<h4>Callout note title</h4>\r\n<p>Use a callout note to draw attention to important content on the page.</p>\r\n</div>"
+  format: full_html
+weight: null
+node_types: {  }
+entity_types:
+  block_content: {  }
+  media: {  }
+  node: {  }
+  taxonomy_term: {  }

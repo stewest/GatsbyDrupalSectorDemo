@@ -1,0 +1,24 @@
+uuid: dd6b823e-c75d-4675-b9c5-85762ab1fa5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.file
+_core:
+  default_config_hash: K86InUmsnYzxgekMB6fda3KvweGPlUw9Iu-1K6SOSfE
+id: media.file.status
+field_name: status
+entity_type: media
+bundle: file
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

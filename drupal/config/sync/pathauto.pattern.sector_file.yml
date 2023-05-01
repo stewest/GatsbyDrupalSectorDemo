@@ -1,0 +1,23 @@
+uuid: dea93996-c6dd-402c-a8cd-219cfc6fca4c
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: pQQ92QJYnpjEq0D4cq0iIRRQjzoij0kbvrxsK23sHMA
+id: sector_file
+label: 'Sector file'
+type: 'canonical_entities:media'
+pattern: 'file/[media:field_title]'
+selection_criteria:
+  840376fb-e76c-4bde-8173-6066a432eb4e:
+    id: 'entity_bundle:media'
+    bundles:
+      file: file
+    negate: false
+    context_mapping:
+      media: media
+selection_logic: and
+weight: -5
+relationships: {  }

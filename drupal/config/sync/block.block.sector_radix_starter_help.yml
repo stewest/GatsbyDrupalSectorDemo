@@ -1,0 +1,22 @@
+uuid: 76b1b29e-fb07-41dc-8815-5881bb783762
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - sector_radix_starter
+_core:
+  default_config_hash: TVBUy0_GM1v9y5Fo2XIXmTlMxRAlASCjZTAulbbD7DI
+id: sector_radix_starter_help
+theme: sector_radix_starter
+region: content
+weight: -19
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

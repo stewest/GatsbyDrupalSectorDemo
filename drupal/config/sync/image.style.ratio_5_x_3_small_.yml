@@ -1,0 +1,17 @@
+uuid: 9ecf24da-32be-4067-bafe-eacb7639067e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 3fakn6NScQSH8PPAXj_GPUNzsgHjxdJNc3PVEbtE9Kc
+name: ratio_5_x_3_small_
+label: 'Ratio 5 x 3 (Small)'
+effects:
+  3f373612-f855-4dd4-b551-dece7453ed01:
+    uuid: 3f373612-f855-4dd4-b551-dece7453ed01
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 730
+      height: 438
+      anchor: center-center

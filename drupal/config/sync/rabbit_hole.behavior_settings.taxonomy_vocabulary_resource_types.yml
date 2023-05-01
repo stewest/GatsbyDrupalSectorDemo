@@ -1,0 +1,14 @@
+uuid: 73225ae5-6eb2-41ad-8f28-da54eaaab5df
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 55xvoEOriQ1zIjWGT57aqzFt9Bo_g64yvLl1ubJAupY
+id: taxonomy_vocabulary_resource_types
+entity_type_id: null
+entity_id: null
+action: page_redirect
+allow_override: 1
+redirect: '/resources?category=[term:tid]'
+redirect_code: 301
+redirect_fallback_action: null

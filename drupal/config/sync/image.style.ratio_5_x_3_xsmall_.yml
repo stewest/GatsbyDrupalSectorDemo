@@ -1,0 +1,17 @@
+uuid: 2b3982f7-7616-4970-8f1b-25865a629ce9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: H9GaiH8-bvBurzc2mzsuzUtyzh0w5xMTftKuvVEaVFM
+name: ratio_5_x_3_xsmall_
+label: 'Ratio 5 x 3 (XSmall)'
+effects:
+  bd07a666-28cb-4e6d-8b4d-218b544cf9b8:
+    uuid: bd07a666-28cb-4e6d-8b4d-218b544cf9b8
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 380
+      height: 228
+      anchor: center-center

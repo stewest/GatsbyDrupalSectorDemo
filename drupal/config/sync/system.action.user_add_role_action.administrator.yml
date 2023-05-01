@@ -1,0 +1,14 @@
+uuid: 020ccdc3-8ca4-4441-91c4-3d6cf119ae03
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.administrator
+  module:
+    - user
+id: user_add_role_action.administrator
+label: 'Add the Drupal site builder (site architects and developers) role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: administrator

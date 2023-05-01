@@ -1,0 +1,33 @@
+uuid: 01356bd1-01ed-47bc-a3d9-92f22c0b4812
+langcode: en
+status: true
+dependencies:
+  module:
+    - admin_ui_toggle
+    - user
+  theme:
+    - sector_radix_starter
+_core:
+  default_config_hash: 3A0dLY826f-By7or3tnncFtWNRWSrtuR5KhN1KEaKnA
+id: sector_radix_starter_sectorblocksadminuitoggle
+theme: sector_radix_starter
+region: pre_header
+weight: -3
+provider: null
+plugin: admin_ui_toggle
+settings:
+  id: admin_ui_toggle
+  label: 'Sector blocks - Admin UI toggle'
+  label_display: '0'
+  provider: admin_ui_toggle
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      content_administrator: content_administrator
+      administrator: administrator
+      content_editor: content_editor
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

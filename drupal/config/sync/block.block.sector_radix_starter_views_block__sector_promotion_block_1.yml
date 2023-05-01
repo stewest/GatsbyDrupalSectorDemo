@@ -1,0 +1,39 @@
+uuid: f6e2f5ca-321b-4eae-a068-769013138905
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sector_promotion
+  module:
+    - block_class
+    - term_condition
+    - views
+  theme:
+    - sector_radix_starter
+third_party_settings:
+  block_class:
+    classes: 'mt-5 mt-md-6'
+_core:
+  default_config_hash: dZ5Ws9xz6cy14LQcxU30eIiyijEpLUWEfA19qtjEGhU
+id: sector_radix_starter_views_block__sector_promotion_block_1
+theme: sector_radix_starter
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:sector_promotion-block_1'
+settings:
+  id: 'views_block:sector_promotion-block_1'
+  label: 'Promotion tiles'
+  label_display: visible
+  provider: views
+  views_label: 'Promotion tiles'
+  items_per_page: none
+visibility:
+  term:
+    id: term
+    negate: false
+    tid:
+      -
+        target_id: '4'
+    context_mapping:
+      node: '@node.node_route_context:node'

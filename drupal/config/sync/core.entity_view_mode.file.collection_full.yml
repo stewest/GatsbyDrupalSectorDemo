@@ -1,0 +1,12 @@
+uuid: b33b174d-a23b-4519-8653-89fbe628d643
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+_core:
+  default_config_hash: _eN52j29odOop-2ZtQmtdmQIvoY2nS5Gx3gd637p754
+id: file.collection_full
+label: collection_full
+targetEntityType: file
+cache: true

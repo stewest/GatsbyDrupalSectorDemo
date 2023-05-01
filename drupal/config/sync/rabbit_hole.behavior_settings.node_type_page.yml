@@ -1,0 +1,16 @@
+uuid: 5b302b79-2ebb-4134-982b-cf54c7fff6b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page
+_core:
+  default_config_hash: y9NH7EEA8BDx6ZojcQOQlaQ3d17-uffWbAu9gdjtKTE
+id: node_type_page
+entity_type_id: node_type
+entity_id: page
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

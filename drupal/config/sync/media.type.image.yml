@@ -1,0 +1,15 @@
+uuid: 11e32e9a-bcf8-4456-825c-a1c38dd9dca4
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Gzfljh3hnYZyvPzKeD_6VQSOW-wR16Pifb9Oc0nqBuU
+id: image
+label: Image
+description: 'Use <em>Image</em> to upload images - e.g. jpg or png images - to the media file manager.'
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_image
+field_map: {  }

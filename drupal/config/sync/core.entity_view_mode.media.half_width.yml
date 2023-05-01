@@ -1,0 +1,12 @@
+uuid: fb2ec493-97dc-4197-942c-35cd356d4cd0
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: jHUgeU5pYr31RJcamV5BdY3kR0k_QrmO8otx5UpeK-0
+id: media.half_width
+label: 'Half width'
+targetEntityType: media
+cache: true
