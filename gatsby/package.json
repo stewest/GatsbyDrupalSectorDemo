@@ -41,7 +41,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "develop": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop",
+    "develop": "NODE_TLS_REJECT_UNAUTHORIZED=0 ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop --https",
     "build": "gatsby build",
     "start": "npm run develop",
     "setup": "node ./scripts/setup.js"
