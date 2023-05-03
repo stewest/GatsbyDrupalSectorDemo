@@ -1,0 +1,1823 @@
+### Type definitions saved at 2023-05-03T07:11:59.477Z ###
+
+enum RemoteFileFit {
+  COVER
+  FILL
+  OUTSIDE
+  CONTAIN
+}
+
+enum RemoteFileFormat {
+  AUTO
+  JPG
+  PNG
+  WEBP
+  AVIF
+}
+
+enum RemoteFileLayout {
+  FIXED
+  FULL_WIDTH
+  CONSTRAINED
+}
+
+enum RemoteFilePlaceholder {
+  DOMINANT_COLOR
+  BLURRED
+  TRACED_SVG
+  NONE
+}
+
+enum RemoteFileCropFocus {
+  CENTER
+  TOP
+  RIGHT
+  BOTTOM
+  LEFT
+  ENTROPY
+  EDGES
+  FACES
+}
+
+type RemoteFileResize {
+  width: Int
+  height: Int
+  src: String
+}
+
+"""Remote Interface"""
+interface RemoteFile {
+  id: ID!
+  mimeType: String!
+  filename: String!
+  filesize: Int
+  width: Int
+  height: Int
+  publicUrl: String!
+  resize(
+    width: Int
+    height: Int
+    aspectRatio: Float
+    fit: RemoteFileFit = COVER
+
+    """
+    
+    The image formats to generate. Valid values are AUTO (meaning the same
+    format as the source image), JPG, PNG, WEBP and AVIF.
+    The default value is [AUTO, WEBP, AVIF], and you should rarely need to
+    change this. Take care if you specify JPG or PNG when you do
+    not know the formats of the source images, as this could lead to unwanted
+    results such as converting JPEGs to PNGs. Specifying
+    both PNG and JPG is not supported and will be ignored.
+    """
+    format: RemoteFileFormat = AUTO
+    cropFocus: [RemoteFileCropFocus]
+    quality: Int = 75
+  ): RemoteFileResize
+
+  """
+  Data used in the <GatsbyImage /> component. See https://gatsby.dev/img for more info.
+  """
+  gatsbyImage(
+    """
+    
+    The layout for the image.
+    FIXED: A static image sized, that does not resize according to the screen width
+    FULL_WIDTH: The image resizes to fit its container. Pass a "sizes" option if
+    it isn't going to be the full width of the screen.
+    CONSTRAINED: Resizes to fit its container, up to a maximum width, at which point it will remain fixed in size.
+    
+    """
+    layout: RemoteFileLayout = CONSTRAINED
+
+    """
+    
+    The display width of the generated image for layout = FIXED, and the display
+    width of the largest image for layout = CONSTRAINED.
+    The actual largest image resolution will be this value multiplied by the largest value in outputPixelDensities
+    Ignored if layout = FLUID.
+    
+    """
+    width: Int
+
+    """
+    
+    If set, the height of the generated image. If omitted, it is calculated from
+    the supplied width, matching the aspect ratio of the source image.
+    """
+    height: Int
+
+    """
+    
+    Format of generated placeholder image, displayed while the main image loads.
+    BLURRED: a blurred, low resolution image, encoded as a base64 data URI
+    DOMINANT_COLOR: a solid color, calculated from the dominant color of the image (default).
+    TRACED_SVG: deprecated. Will use DOMINANT_COLOR.
+    NONE: no placeholder. Set the argument "backgroundColor" to use a fixed background color.
+    """
+    placeholder: RemoteFilePlaceholder = DOMINANT_COLOR
+
+    """
+    
+    If set along with width or height, this will set the value of the other
+    dimension to match the provided aspect ratio, cropping the image if needed.
+    If neither width or height is provided, height will be set based on the intrinsic width of the source image.
+    
+    """
+    aspectRatio: Float
+
+    """
+    
+    The image formats to generate. Valid values are AUTO (meaning the same
+    format as the source image), JPG, PNG, WEBP and AVIF.
+    The default value is [AUTO, WEBP, AVIF], and you should rarely need to
+    change this. Take care if you specify JPG or PNG when you do
+    not know the formats of the source images, as this could lead to unwanted
+    results such as converting JPEGs to PNGs. Specifying
+    both PNG and JPG is not supported and will be ignored.
+    
+    """
+    formats: [RemoteFileFormat!] = [AUTO, WEBP, AVIF]
+
+    """
+    
+    A list of image pixel densities to generate for FIXED and CONSTRAINED
+    images. You should rarely need to change this. It will never generate images
+    larger than the source, and will always include a 1x image.
+    Default is [ 1, 2 ] for fixed images, meaning 1x, 2x, and [0.25, 0.5, 1, 2]
+    for fluid. In this case, an image with a fluid layout and width = 400 would
+    generate images at 100, 200, 400 and 800px wide.
+    
+    """
+    outputPixelDensities: [Float] = [0.25, 0.5, 1, 2]
+
+    """
+    
+    Specifies the image widths to generate. You should rarely need to change
+    this. For FIXED and CONSTRAINED images it is better to allow these to be
+    determined automatically,
+    based on the image size. For FULL_WIDTH images this can be used to override
+    the default, which is [750, 1080, 1366, 1920].
+    It will never generate any images larger than the source.
+    
+    """
+    breakpoints: [Int] = [750, 1080, 1366, 1920]
+
+    """
+    
+    The "sizes" property, passed to the img tag. This describes the display size of the image.
+    This does not affect the generated images, but is used by the browser to
+    decide which images to download. You can leave this blank for fixed images,
+    or if the responsive image
+    container will be the full width of the screen. In these cases we will generate an appropriate value.
+    
+    """
+    sizes: String
+
+    """
+    Background color applied to the wrapper, or when "letterboxing" an image to another aspect ratio.
+    """
+    backgroundColor: String
+    fit: RemoteFileFit = COVER
+    cropFocus: [RemoteFileCropFocus]
+    quality: Int = 75
+  ): GatsbyImageData
+}
+
+type File implements Node @dontInfer {
+  sourceInstanceName: String!
+  absolutePath: String!
+  relativePath: String!
+  extension: String!
+  size: Int!
+  prettySize: String!
+  modifiedTime: Date! @dateformat
+  accessTime: Date! @dateformat
+  changeTime: Date! @dateformat
+  birthTime: Date! @dateformat
+  root: String!
+  dir: String!
+  base: String!
+  ext: String!
+  name: String!
+  relativeDirectory: String!
+  dev: Int!
+  mode: Int!
+  nlink: Int!
+  uid: Int!
+  gid: Int!
+  rdev: Int!
+  ino: Float!
+  atimeMs: Float!
+  mtimeMs: Float!
+  ctimeMs: Float!
+  atime: Date! @dateformat
+  mtime: Date! @dateformat
+  ctime: Date! @dateformat
+  birthtime: Date @deprecated(reason: "Use `birthTime` instead")
+  birthtimeMs: Float @deprecated(reason: "Use `birthTime` instead")
+  blksize: Int
+  blocks: Int
+  url: String
+}
+
+type Directory implements Node @dontInfer {
+  sourceInstanceName: String!
+  absolutePath: String!
+  relativePath: String!
+  extension: String!
+  size: Int!
+  prettySize: String!
+  modifiedTime: Date! @dateformat
+  accessTime: Date! @dateformat
+  changeTime: Date! @dateformat
+  birthTime: Date! @dateformat
+  root: String!
+  dir: String!
+  base: String!
+  ext: String!
+  name: String!
+  relativeDirectory: String!
+  dev: Int!
+  mode: Int!
+  nlink: Int!
+  uid: Int!
+  gid: Int!
+  rdev: Int!
+  ino: Float!
+  atimeMs: Float!
+  mtimeMs: Float!
+  ctimeMs: Float!
+  atime: Date! @dateformat
+  mtime: Date! @dateformat
+  ctime: Date! @dateformat
+  birthtime: Date @deprecated(reason: "Use `birthTime` instead")
+  birthtimeMs: Float @deprecated(reason: "Use `birthTime` instead")
+}
+
+type Site implements Node @dontInfer {
+  buildTime: Date @dateformat
+  siteMetadata: SiteSiteMetadata
+  port: Int
+  host: String
+  polyfill: Boolean
+  pathPrefix: String
+  jsxRuntime: String
+  trailingSlash: String
+  graphqlTypegen: Boolean
+}
+
+type SiteSiteMetadata {
+  title: String
+  description: String
+}
+
+type SiteFunction implements Node @dontInfer {
+  functionRoute: String!
+  pluginName: String!
+  originalAbsoluteFilePath: String!
+  originalRelativeFilePath: String!
+  relativeCompiledFilePath: String!
+  absoluteCompiledFilePath: String!
+  matchPath: String
+}
+
+type SitePage implements Node @dontInfer {
+  path: String!
+  component: String!
+  internalComponentName: String!
+  componentChunkName: String!
+  matchPath: String
+  pageContext: JSON @proxy(from: "context", fromNode: false)
+  pluginCreator: SitePlugin @link(by: "id", from: "pluginCreatorId")
+}
+
+type SitePlugin implements Node @dontInfer {
+  resolve: String
+  name: String
+  version: String
+  nodeAPIs: [String]
+  browserAPIs: [String]
+  ssrAPIs: [String]
+  pluginFilepath: String
+  pluginOptions: JSON
+  packageJson: JSON
+}
+
+type SiteBuildMetadata implements Node @dontInfer {
+  buildTime: Date @dateformat
+}
+
+enum ImageFormat {
+  NO_CHANGE
+  AUTO
+  JPG
+  PNG
+  WEBP
+  AVIF
+}
+
+enum ImageFit {
+  COVER
+  CONTAIN
+  FILL
+  INSIDE
+  OUTSIDE
+}
+
+enum ImageLayout {
+  FIXED
+  FULL_WIDTH
+  CONSTRAINED
+}
+
+enum ImageCropFocus {
+  CENTER
+  NORTH
+  NORTHEAST
+  EAST
+  SOUTHEAST
+  SOUTH
+  SOUTHWEST
+  WEST
+  NORTHWEST
+  ENTROPY
+  ATTENTION
+}
+
+input DuotoneGradient {
+  highlight: String!
+  shadow: String!
+  opacity: Int
+}
+
+enum PotraceTurnPolicy {
+  TURNPOLICY_BLACK
+  TURNPOLICY_WHITE
+  TURNPOLICY_LEFT
+  TURNPOLICY_RIGHT
+  TURNPOLICY_MINORITY
+  TURNPOLICY_MAJORITY
+}
+
+input Potrace {
+  turnPolicy: PotraceTurnPolicy
+  turdSize: Float
+  alphaMax: Float
+  optCurve: Boolean
+  optTolerance: Float
+  threshold: Int
+  blackOnWhite: Boolean
+  color: String
+  background: String
+}
+
+type ImageSharpFixed {
+  base64: String
+  tracedSVG: String
+  aspectRatio: Float
+  width: Float!
+  height: Float!
+  src: String!
+  srcSet: String!
+  srcWebp: String
+  srcSetWebp: String
+  originalName: String
+}
+
+type ImageSharpFluid {
+  base64: String
+  tracedSVG: String
+  aspectRatio: Float!
+  src: String!
+  srcSet: String!
+  srcWebp: String
+  srcSetWebp: String
+  sizes: String!
+  originalImg: String
+  originalName: String
+  presentationWidth: Int!
+  presentationHeight: Int!
+}
+
+enum ImagePlaceholder {
+  DOMINANT_COLOR
+  TRACED_SVG
+  BLURRED
+  NONE
+}
+
+input BlurredOptions {
+  """Width of the generated low-res preview. Default is 20px"""
+  width: Int
+
+  """
+  Force the output format for the low-res preview. Default is to use the same
+  format as the input. You should rarely need to change this
+  """
+  toFormat: ImageFormat
+}
+
+input JPGOptions {
+  quality: Int
+  progressive: Boolean = true
+}
+
+input PNGOptions {
+  quality: Int
+  compressionSpeed: Int = 4
+}
+
+input WebPOptions {
+  quality: Int
+}
+
+input AVIFOptions {
+  quality: Int
+  lossless: Boolean
+  speed: Int
+}
+
+input TransformOptions {
+  grayscale: Boolean
+  duotone: DuotoneGradient
+  rotate: Int
+  trim: Float
+  cropFocus: ImageCropFocus = ATTENTION
+  fit: ImageFit = COVER
+}
+
+type ImageSharpOriginal {
+  width: Float
+  height: Float
+  src: String
+}
+
+type ImageSharpResize {
+  src: String
+  tracedSVG: String
+  width: Int
+  height: Int
+  aspectRatio: Float
+  originalName: String
+}
+
+type ImageSharp implements Node @childOf(types: ["File"]) @dontInfer {
+  fixed(width: Int, height: Int, base64Width: Int, jpegProgressive: Boolean = true, pngCompressionSpeed: Int = 4, grayscale: Boolean, duotone: DuotoneGradient, traceSVG: Potrace, quality: Int, jpegQuality: Int, pngQuality: Int, webpQuality: Int, toFormat: ImageFormat, toFormatBase64: ImageFormat, cropFocus: ImageCropFocus = ATTENTION, fit: ImageFit = COVER, background: String = "rgba(0,0,0,1)", rotate: Int, trim: Float): ImageSharpFixed
+  fluid(
+    maxWidth: Int
+    maxHeight: Int
+    base64Width: Int
+    grayscale: Boolean
+    jpegProgressive: Boolean = true
+    pngCompressionSpeed: Int = 4
+    duotone: DuotoneGradient
+    traceSVG: Potrace
+    quality: Int
+    jpegQuality: Int
+    pngQuality: Int
+    webpQuality: Int
+    toFormat: ImageFormat
+    toFormatBase64: ImageFormat
+    cropFocus: ImageCropFocus = ATTENTION
+    fit: ImageFit = COVER
+    background: String = "rgba(0,0,0,1)"
+    rotate: Int
+    trim: Float
+    sizes: String
+
+    """
+    A list of image widths to be generated. Example: [ 200, 340, 520, 890 ]
+    """
+    srcSetBreakpoints: [Int] = []
+  ): ImageSharpFluid
+  gatsbyImageData(
+    """
+    The layout for the image.
+    FIXED: A static image sized, that does not resize according to the screen width
+    FULL_WIDTH: The image resizes to fit its container. Pass a "sizes" option if
+    it isn't going to be the full width of the screen.
+    CONSTRAINED: Resizes to fit its container, up to a maximum width, at which point it will remain fixed in size.
+    """
+    layout: ImageLayout = CONSTRAINED
+
+    """
+    The display width of the generated image for layout = FIXED, and the maximum
+    display width of the largest image for layout = CONSTRAINED.
+    Ignored if layout = FLUID.
+    """
+    width: Int
+
+    """
+    The display height of the generated image for layout = FIXED, and the
+    maximum display height of the largest image for layout = CONSTRAINED.
+    The image will be cropped if the aspect ratio does not match the source
+    image. If omitted, it is calculated from the supplied width,
+    matching the aspect ratio of the source image.
+    """
+    height: Int
+
+    """
+    If set along with width or height, this will set the value of the other
+    dimension to match the provided aspect ratio, cropping the image if needed.
+    If neither width or height is provided, height will be set based on the intrinsic width of the source image.
+    """
+    aspectRatio: Float
+
+    """
+    Format of generated placeholder image, displayed while the main image loads.
+    BLURRED: a blurred, low resolution image, encoded as a base64 data URI
+    DOMINANT_COLOR: a solid color, calculated from the dominant color of the image (default).
+    TRACED_SVG: deprecated. Will use DOMINANT_COLOR.
+    NONE: no placeholder. Set "background" to use a fixed background color.
+    """
+    placeholder: ImagePlaceholder
+
+    """
+    Options for the low-resolution placeholder image. Set placeholder to "BLURRED" to use this
+    """
+    blurredOptions: BlurredOptions
+
+    """
+    Options for traced placeholder SVGs. You also should set placeholder to "TRACED_SVG".
+    """
+    tracedSVGOptions: Potrace
+
+    """
+    The image formats to generate. Valid values are "AUTO" (meaning the same
+    format as the source image), "JPG", "PNG", "WEBP" and "AVIF".
+    The default value is [AUTO, WEBP], and you should rarely need to change
+    this. Take care if you specify JPG or PNG when you do
+    not know the formats of the source images, as this could lead to unwanted
+    results such as converting JPEGs to PNGs. Specifying
+    both PNG and JPG is not supported and will be ignored.
+    """
+    formats: [ImageFormat]
+
+    """
+    A list of image pixel densities to generate. It will never generate images
+    larger than the source, and will always include a 1x image.
+    Default is [ 1, 2 ] for FIXED images, meaning 1x and 2x and [0.25, 0.5, 1,
+    2] for CONSTRAINED. In this case, an image with a constrained layout
+    and width = 400 would generate images at 100, 200, 400 and 800px wide.
+    Ignored for FULL_WIDTH images, which use breakpoints instead
+    """
+    outputPixelDensities: [Float]
+
+    """
+    Specifies the image widths to generate. For FIXED and CONSTRAINED images it
+    is better to allow these to be determined automatically,
+    based on the image size. For FULL_WIDTH images this can be used to override
+    the default, which is [750, 1080, 1366, 1920].
+    It will never generate any images larger than the source.
+    """
+    breakpoints: [Int]
+
+    """
+    The "sizes" property, passed to the img tag. This describes the display size of the image.
+    This does not affect the generated images, but is used by the browser to decide which images to download.
+    You should usually leave this blank, and a suitable value will be calculated. The exception is if a FULL_WIDTH image
+    does not actually span the full width of the screen, in which case you should pass the correct size here.
+    """
+    sizes: String
+
+    """The default quality. This is overridden by any format-specific options"""
+    quality: Int
+
+    """Options to pass to sharp when generating JPG images."""
+    jpgOptions: JPGOptions
+
+    """Options to pass to sharp when generating PNG images."""
+    pngOptions: PNGOptions
+
+    """Options to pass to sharp when generating WebP images."""
+    webpOptions: WebPOptions
+
+    """Options to pass to sharp when generating AVIF images."""
+    avifOptions: AVIFOptions
+
+    """
+    Options to pass to sharp to control cropping and other image manipulations.
+    """
+    transformOptions: TransformOptions
+
+    """
+    Background color applied to the wrapper. Also passed to sharp to use as a
+    background when "letterboxing" an image to another aspect ratio.
+    """
+    backgroundColor: String
+  ): GatsbyImageData!
+  original: ImageSharpOriginal
+  resize(width: Int, height: Int, quality: Int, jpegQuality: Int, pngQuality: Int, webpQuality: Int, jpegProgressive: Boolean = true, pngCompressionLevel: Int = 9, pngCompressionSpeed: Int = 4, grayscale: Boolean, duotone: DuotoneGradient, base64: Boolean, traceSVG: Potrace, toFormat: ImageFormat, cropFocus: ImageCropFocus = ATTENTION, fit: ImageFit = COVER, background: String = "rgba(0,0,0,1)", rotate: Int, trim: Float): ImageSharpResize
+}
+
+type DrupalUser__user implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  display_name: String
+  relationships: DrupalUser__userRelationships
+}
+
+type DrupalUser__userRelationships {
+  DrupalEntity_subqueue__information_tiles: [DrupalEntity_subqueue__information_tiles] @link(by: "id", from: "DrupalEntity_subqueue__information_tiles___NODE")
+  DrupalEntity_subqueue__promotional_links: [DrupalEntity_subqueue__promotional_links] @link(by: "id", from: "DrupalEntity_subqueue__promotional_links___NODE")
+  DrupalEntity_subqueue__promotional_tiles: [DrupalEntity_subqueue__promotional_tiles] @link(by: "id", from: "DrupalEntity_subqueue__promotional_tiles___NODE")
+  DrupalFile__file: [DrupalFile__file] @link(by: "id", from: "DrupalFile__file___NODE")
+  DrupalMedia__file: [DrupalMedia__file] @link(by: "id", from: "DrupalMedia__file___NODE")
+  DrupalMedia__image: [DrupalMedia__image] @link(by: "id", from: "DrupalMedia__image___NODE")
+  DrupalMedia__remote_video: [DrupalMedia__remote_video] @link(by: "id", from: "DrupalMedia__remote_video___NODE")
+  DrupalNode__article: [DrupalNode__article] @link(by: "id", from: "DrupalNode__article___NODE")
+  DrupalNode__page: [DrupalNode__page] @link(by: "id", from: "DrupalNode__page___NODE")
+  DrupalNode__promotion: [DrupalNode__promotion] @link(by: "id", from: "DrupalNode__promotion___NODE")
+  DrupalNode__resource: [DrupalNode__resource] @link(by: "id", from: "DrupalNode__resource___NODE")
+}
+
+type DrupalEntity_subqueue__information_tiles implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__name: String
+  drupal_internal__revision_id: Int
+  langcode: String
+  revision_created: Date @dateformat
+  status: Boolean
+  title: String
+  created: Date @dateformat
+  changed: Date @dateformat
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  relationships: DrupalEntity_subqueue__information_tilesRelationships
+  queue: DrupalEntity_subqueue__information_tilesQueue
+  revision_user: DrupalEntity_subqueue__information_tilesRevision_user
+  uid: DrupalEntity_subqueue__information_tilesUid
+  items: [DrupalEntity_subqueue__information_tilesItems]
+}
+
+type DrupalEntity_subqueue__information_tilesRelationships {
+  queue: DrupalEntity_queue__entity_queue @link(by: "id", from: "queue___NODE")
+  revision_user: DrupalUser__user @link(by: "id", from: "revision_user___NODE")
+  uid: DrupalUser__user @link(by: "id", from: "uid___NODE")
+  items: [DrupalNode__page] @link(by: "id", from: "items___NODE")
+}
+
+type DrupalEntity_queue__entity_queue implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  langcode: String
+  status: Boolean
+  dependencies: DrupalEntity_queue__entity_queueDependencies
+  drupal_internal__id: String
+  label: String
+  handler: String
+  entity_settings: DrupalEntity_queue__entity_queueEntity_settings
+  queue_settings: DrupalEntity_queue__entity_queueQueue_settings
+  relationships: DrupalEntity_queue__entity_queueRelationships
+}
+
+type DrupalEntity_queue__entity_queueDependencies {
+  module: [String]
+}
+
+type DrupalEntity_queue__entity_queueEntity_settings @derivedTypes {
+  target_type: String
+  handler: String
+  handler_settings: DrupalEntity_queue__entity_queueEntity_settingsHandler_settings
+}
+
+type DrupalEntity_queue__entity_queueEntity_settingsHandler_settings @derivedTypes {
+  target_bundles: DrupalEntity_queue__entity_queueEntity_settingsHandler_settingsTarget_bundles
+  sort: DrupalEntity_queue__entity_queueEntity_settingsHandler_settingsSort
+  auto_create: Boolean
+  auto_create_bundle: String
+}
+
+type DrupalEntity_queue__entity_queueEntity_settingsHandler_settingsTarget_bundles {
+  promotion: String
+}
+
+type DrupalEntity_queue__entity_queueEntity_settingsHandler_settingsSort {
+  field: String
+}
+
+type DrupalEntity_queue__entity_queueQueue_settings {
+  min_size: Int
+  max_size: Int
+  act_as_queue: Boolean
+  reverse_in_admin: Boolean
+}
+
+type DrupalEntity_queue__entity_queueRelationships {
+  DrupalEntity_subqueue__promotional_tiles: [DrupalEntity_subqueue__promotional_tiles] @link(by: "id", from: "DrupalEntity_subqueue__promotional_tiles___NODE")
+  DrupalEntity_subqueue__promotional_links: [DrupalEntity_subqueue__promotional_links] @link(by: "id", from: "DrupalEntity_subqueue__promotional_links___NODE")
+  DrupalEntity_subqueue__information_tiles: [DrupalEntity_subqueue__information_tiles] @link(by: "id", from: "DrupalEntity_subqueue__information_tiles___NODE")
+}
+
+type DrupalEntity_subqueue__promotional_tiles implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__name: String
+  drupal_internal__revision_id: Int
+  langcode: String
+  revision_created: Date @dateformat
+  status: Boolean
+  title: String
+  created: Date @dateformat
+  changed: Date @dateformat
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  relationships: DrupalEntity_subqueue__promotional_tilesRelationships
+  queue: DrupalEntity_subqueue__promotional_tilesQueue
+  revision_user: DrupalEntity_subqueue__promotional_tilesRevision_user
+  uid: DrupalEntity_subqueue__promotional_tilesUid
+  items: [DrupalEntity_subqueue__promotional_tilesItems]
+}
+
+type DrupalEntity_subqueue__promotional_tilesRelationships {
+  queue: DrupalEntity_queue__entity_queue @link(by: "id", from: "queue___NODE")
+  revision_user: DrupalUser__user @link(by: "id", from: "revision_user___NODE")
+  uid: DrupalUser__user @link(by: "id", from: "uid___NODE")
+  items: [DrupalNode__promotion] @link(by: "id", from: "items___NODE")
+}
+
+type DrupalNode__promotion implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__nid: Int
+  drupal_internal__vid: Int
+  langcode: String
+  revision_timestamp: Date @dateformat
+  status: Boolean
+  title: String
+  created: Date @dateformat
+  changed: Date @dateformat
+  promote: Boolean
+  sticky: Boolean
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  path: DrupalNode__promotionPath
+  rh_action: String
+  rh_redirect_response: Int
+  body: DrupalNode__promotionBody
+  field_featured_content: DrupalNode__promotionField_featured_content
+  relationships: DrupalNode__promotionRelationships
+  node_type: DrupalNode__promotionNode_type
+  revision_uid: DrupalNode__promotionRevision_uid
+  uid: DrupalNode__promotionUid
+  field_promotion_type: DrupalNode__promotionField_promotion_type
+  field_teaser: DrupalNode__promotionField_teaser
+}
+
+type DrupalNode__promotionPath {
+  langcode: String
+}
+
+type DrupalNode__promotionBody {
+  value: String
+  format: String
+  processed: String
+  summary: String
+}
+
+type DrupalNode__promotionField_featured_content {
+  uri: String
+  title: String
+}
+
+type DrupalNode__promotionRelationships {
+  DrupalEntity_subqueue__promotional_tiles: [DrupalEntity_subqueue__promotional_tiles] @link(by: "id", from: "DrupalEntity_subqueue__promotional_tiles___NODE")
+  node_type: DrupalNode_type__node_type @link(by: "id", from: "node_type___NODE")
+  revision_uid: DrupalUser__user @link(by: "id", from: "revision_uid___NODE")
+  uid: DrupalUser__user @link(by: "id", from: "uid___NODE")
+  field_promotion_type: DrupalTaxonomy_term__promotion_type @link(by: "id", from: "field_promotion_type___NODE")
+  field_teaser: DrupalMedia__image @link(by: "id", from: "field_teaser___NODE")
+}
+
+type DrupalNode_type__node_type implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  langcode: String
+  status: Boolean
+  dependencies: DrupalNode_type__node_typeDependencies
+  third_party_settings: DrupalNode_type__node_typeThird_party_settings
+  name: String
+  drupal_internal__type: String
+  description: String
+  help: String
+  new_revision: Boolean
+  preview_mode: Int
+  display_submitted: Boolean
+  relationships: DrupalNode_type__node_typeRelationships
+}
+
+type DrupalNode_type__node_typeDependencies {
+  module: [String]
+}
+
+type DrupalNode_type__node_typeThird_party_settings @derivedTypes {
+  menu_ui: DrupalNode_type__node_typeThird_party_settingsMenu_ui
+  wysiwyg_template: DrupalNode_type__node_typeThird_party_settingsWysiwyg_template
+  gatsby: DrupalNode_type__node_typeThird_party_settingsGatsby
+}
+
+type DrupalNode_type__node_typeThird_party_settingsMenu_ui {
+  available_menus: [String]
+  parent: String
+}
+
+type DrupalNode_type__node_typeThird_party_settingsWysiwyg_template {
+  default_template: String
+}
+
+type DrupalNode_type__node_typeThird_party_settingsGatsby {
+  preview: Boolean
+}
+
+type DrupalNode_type__node_typeRelationships {
+  DrupalNode__promotion: [DrupalNode__promotion] @link(by: "id", from: "DrupalNode__promotion___NODE")
+  DrupalNode__resource: [DrupalNode__resource] @link(by: "id", from: "DrupalNode__resource___NODE")
+  DrupalNode__article: [DrupalNode__article] @link(by: "id", from: "DrupalNode__article___NODE")
+  DrupalNode__page: [DrupalNode__page] @link(by: "id", from: "DrupalNode__page___NODE")
+}
+
+type DrupalNode__resource implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__nid: Int
+  drupal_internal__vid: Int
+  langcode: String
+  revision_timestamp: Date @dateformat
+  status: Boolean
+  title: String
+  created: Date @dateformat
+  changed: Date @dateformat
+  promote: Boolean
+  sticky: Boolean
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  path: DrupalNode__resourcePath
+  rh_action: String
+  rh_redirect_response: Int
+  body: DrupalNode__resourceBody
+  field_issue_date: Date @dateformat
+  field_last_updated: Date @dateformat
+  field_related_links: [DrupalNode__resourceField_related_links]
+  relationships: DrupalNode__resourceRelationships
+  node_type: DrupalNode__resourceNode_type
+  revision_uid: DrupalNode__resourceRevision_uid
+  uid: DrupalNode__resourceUid
+  field_resource_type: DrupalNode__resourceField_resource_type
+  field_related_files: [DrupalNode__resourceField_related_files]
+}
+
+type DrupalNode__resourcePath {
+  alias: String
+  pid: Int
+  langcode: String
+}
+
+type DrupalNode__resourceBody {
+  value: String
+  format: String
+  processed: String
+  summary: String
+}
+
+type DrupalNode__resourceField_related_links {
+  uri: String
+  title: String
+}
+
+type DrupalNode__resourceRelationships {
+  node_type: DrupalNode_type__node_type @link(by: "id", from: "node_type___NODE")
+  revision_uid: DrupalUser__user @link(by: "id", from: "revision_uid___NODE")
+  uid: DrupalUser__user @link(by: "id", from: "uid___NODE")
+  field_related_files: [DrupalMedia__file] @link(by: "id", from: "field_related_files___NODE")
+  field_resource_type: DrupalTaxonomy_term__resource_types @link(by: "id", from: "field_resource_type___NODE")
+}
+
+type DrupalMedia__file implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__mid: Int
+  drupal_internal__vid: Int
+  langcode: String
+  revision_created: Date @dateformat
+  status: Boolean
+  name: String
+  created: Date @dateformat
+  changed: Date @dateformat
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  path: DrupalMedia__filePath
+  field_credit_or_caption: DrupalMedia__fileField_credit_or_caption
+  field_filesize: String
+  field_mimetype: String
+  field_title: String
+  relationships: DrupalMedia__fileRelationships
+  bundle: DrupalMedia__fileBundle
+  uid: DrupalMedia__fileUid
+  thumbnail: DrupalMedia__fileThumbnail
+  field_media_file: DrupalMedia__fileField_media_file
+  field_tags: [DrupalMedia__fileField_tags]
+}
+
+type DrupalMedia__filePath {
+  alias: String
+  pid: Int
+  langcode: String
+}
+
+type DrupalMedia__fileField_credit_or_caption {
+  value: String
+  format: String
+  processed: String
+}
+
+type DrupalMedia__fileRelationships {
+  bundle: DrupalMedia_type__media_type @link(by: "id", from: "bundle___NODE")
+  uid: DrupalUser__user @link(by: "id", from: "uid___NODE")
+  thumbnail: DrupalFile__file @link(by: "id", from: "thumbnail___NODE")
+  field_media_file: DrupalFile__file @link(by: "id", from: "field_media_file___NODE")
+  field_tags: [DrupalTaxonomy_term__tags] @link(by: "id", from: "field_tags___NODE")
+  DrupalNode__article: [DrupalNode__article] @link(by: "id", from: "DrupalNode__article___NODE")
+  DrupalNode__page: [DrupalNode__page] @link(by: "id", from: "DrupalNode__page___NODE")
+  DrupalNode__resource: [DrupalNode__resource] @link(by: "id", from: "DrupalNode__resource___NODE")
+}
+
+type DrupalMedia_type__media_type implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  label: String
+  relationships: DrupalMedia_type__media_typeRelationships
+}
+
+type DrupalMedia_type__media_typeRelationships {
+  DrupalMedia__file: [DrupalMedia__file] @link(by: "id", from: "DrupalMedia__file___NODE")
+  DrupalMedia__image: [DrupalMedia__image] @link(by: "id", from: "DrupalMedia__image___NODE")
+  DrupalMedia__remote_video: [DrupalMedia__remote_video] @link(by: "id", from: "DrupalMedia__remote_video___NODE")
+}
+
+type DrupalMedia__image implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__mid: Int
+  drupal_internal__vid: Int
+  langcode: String
+  revision_created: Date @dateformat
+  status: Boolean
+  name: String
+  created: Date @dateformat
+  changed: Date @dateformat
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  path: DrupalMedia__imagePath
+  field_credit_or_caption: DrupalMedia__imageField_credit_or_caption
+  field_description: DrupalMedia__imageField_description
+  field_title: String
+  relationships: DrupalMedia__imageRelationships
+  bundle: DrupalMedia__imageBundle
+  uid: DrupalMedia__imageUid
+  thumbnail: DrupalMedia__imageThumbnail
+  field_media_image: DrupalMedia__imageField_media_image
+  field_tags: [DrupalMedia__imageField_tags]
+}
+
+type DrupalMedia__imagePath {
+  alias: String
+  pid: Int
+  langcode: String
+}
+
+type DrupalMedia__imageField_credit_or_caption {
+  value: String
+  format: String
+  processed: String
+}
+
+type DrupalMedia__imageField_description {
+  value: String
+  format: String
+  processed: String
+}
+
+type DrupalMedia__imageRelationships {
+  bundle: DrupalMedia_type__media_type @link(by: "id", from: "bundle___NODE")
+  uid: DrupalUser__user @link(by: "id", from: "uid___NODE")
+  thumbnail: DrupalFile__file @link(by: "id", from: "thumbnail___NODE")
+  field_media_image: DrupalFile__file @link(by: "id", from: "field_media_image___NODE")
+  field_tags: [DrupalTaxonomy_term__tags] @link(by: "id", from: "field_tags___NODE")
+  DrupalNode__page: [DrupalNode__page] @link(by: "id", from: "DrupalNode__page___NODE")
+  DrupalNode__promotion: [DrupalNode__promotion] @link(by: "id", from: "DrupalNode__promotion___NODE")
+}
+
+type DrupalFile__file implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__fid: Int
+  langcode: String
+  filename: String
+  uri: DrupalFile__fileUri
+  filemime: String
+  filesize: Int
+  status: Boolean
+  created: Date @dateformat
+  changed: Date @dateformat
+  relationships: DrupalFile__fileRelationships
+  uid: DrupalFile__fileUid
+  localFile: File @link(by: "id", from: "localFile___NODE")
+}
+
+type DrupalFile__fileUri {
+  value: String
+  url: String
+}
+
+type DrupalFile__fileRelationships {
+  uid: DrupalUser__user @link(by: "id", from: "uid___NODE")
+  DrupalMedia__file: [DrupalMedia__file] @link(by: "id", from: "DrupalMedia__file___NODE")
+  DrupalMedia__image: [DrupalMedia__image] @link(by: "id", from: "DrupalMedia__image___NODE")
+  DrupalMedia__remote_video: [DrupalMedia__remote_video] @link(by: "id", from: "DrupalMedia__remote_video___NODE")
+}
+
+type DrupalMedia__remote_video implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__mid: Int
+  drupal_internal__vid: Int
+  langcode: String
+  revision_created: Date @dateformat
+  status: Boolean
+  name: String
+  created: Date @dateformat
+  changed: Date @dateformat
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  path: DrupalMedia__remote_videoPath
+  field_credit_or_caption: DrupalMedia__remote_videoField_credit_or_caption
+  field_description: DrupalMedia__remote_videoField_description
+  field_media_oembed_video: String
+  field_title: String
+  field_transcript: DrupalMedia__remote_videoField_transcript
+  relationships: DrupalMedia__remote_videoRelationships
+  bundle: DrupalMedia__remote_videoBundle
+  uid: DrupalMedia__remote_videoUid
+  thumbnail: DrupalMedia__remote_videoThumbnail
+  field_tags: [DrupalMedia__remote_videoField_tags]
+}
+
+type DrupalMedia__remote_videoPath {
+  langcode: String
+}
+
+type DrupalMedia__remote_videoField_credit_or_caption {
+  value: String
+  format: String
+  processed: String
+}
+
+type DrupalMedia__remote_videoField_description {
+  value: String
+  format: String
+  processed: String
+}
+
+type DrupalMedia__remote_videoField_transcript {
+  value: String
+  format: String
+  processed: String
+}
+
+type DrupalMedia__remote_videoRelationships {
+  bundle: DrupalMedia_type__media_type @link(by: "id", from: "bundle___NODE")
+  uid: DrupalUser__user @link(by: "id", from: "uid___NODE")
+  thumbnail: DrupalFile__file @link(by: "id", from: "thumbnail___NODE")
+  field_tags: [DrupalTaxonomy_term__tags] @link(by: "id", from: "field_tags___NODE")
+}
+
+type DrupalTaxonomy_term__tags implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__tid: Int
+  drupal_internal__revision_id: Int
+  langcode: String
+  revision_created: Date @dateformat
+  status: Boolean
+  name: String
+  weight: Int
+  changed: Date @dateformat
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  path: DrupalTaxonomy_term__tagsPath
+  relationships: DrupalTaxonomy_term__tagsRelationships
+  vid: DrupalTaxonomy_term__tagsVid
+}
+
+type DrupalTaxonomy_term__tagsPath {
+  langcode: String
+}
+
+type DrupalTaxonomy_term__tagsRelationships {
+  DrupalMedia__file: [DrupalMedia__file] @link(by: "id", from: "DrupalMedia__file___NODE")
+  DrupalMedia__image: [DrupalMedia__image] @link(by: "id", from: "DrupalMedia__image___NODE")
+  DrupalMedia__remote_video: [DrupalMedia__remote_video] @link(by: "id", from: "DrupalMedia__remote_video___NODE")
+}
+
+type DrupalTaxonomy_term__tagsVid {
+  drupal_internal__target_id: String
+}
+
+type DrupalMedia__remote_videoBundle {
+  drupal_internal__target_id: String
+}
+
+type DrupalMedia__remote_videoUid {
+  drupal_internal__target_id: Int
+}
+
+type DrupalMedia__remote_videoThumbnail {
+  alt: String
+  width: Int
+  height: Int
+  drupal_internal__target_id: Int
+}
+
+type DrupalMedia__remote_videoField_tags {
+  drupal_internal__target_id: Int
+}
+
+type DrupalFile__fileUid {
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__page implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__nid: Int
+  drupal_internal__vid: Int
+  langcode: String
+  revision_timestamp: Date @dateformat
+  revision_log: String
+  status: Boolean
+  title: String
+  created: Date @dateformat
+  changed: Date @dateformat
+  promote: Boolean
+  sticky: Boolean
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  path: DrupalNode__pagePath
+  rh_action: String
+  rh_redirect_response: Int
+  rh_redirect_fallback_action: String
+  body: DrupalNode__pageBody
+  field_last_updated: Date @dateformat
+  field_related_links: [DrupalNode__pageField_related_links]
+  field_subtitle: DrupalNode__pageField_subtitle
+  relationships: DrupalNode__pageRelationships
+  node_type: DrupalNode__pageNode_type
+  revision_uid: DrupalNode__pageRevision_uid
+  uid: DrupalNode__pageUid
+  field_auto_contextual_content: [DrupalNode__pageField_auto_contextual_content]
+  field_page_variant: DrupalNode__pageField_page_variant
+  field_banner: DrupalNode__pageField_banner
+  field_related_files: [DrupalNode__pageField_related_files]
+}
+
+type DrupalNode__pagePath {
+  alias: String
+  pid: Int
+  langcode: String
+}
+
+type DrupalNode__pageBody {
+  value: String
+  format: String
+  processed: String
+  summary: String
+}
+
+type DrupalNode__pageField_related_links {
+  uri: String
+  title: String
+}
+
+type DrupalNode__pageField_subtitle {
+  value: String
+  format: String
+  processed: String
+}
+
+type DrupalNode__pageRelationships {
+  node_type: DrupalNode_type__node_type @link(by: "id", from: "node_type___NODE")
+  revision_uid: DrupalUser__user @link(by: "id", from: "revision_uid___NODE")
+  uid: DrupalUser__user @link(by: "id", from: "uid___NODE")
+  field_auto_contextual_content: [DrupalTaxonomy_term__automated_contextual_content] @link(by: "id", from: "field_auto_contextual_content___NODE")
+  field_page_variant: DrupalTaxonomy_term__page_variants @link(by: "id", from: "field_page_variant___NODE")
+  field_related_files: [DrupalMedia__file] @link(by: "id", from: "field_related_files___NODE")
+  field_banner: DrupalMedia__image @link(by: "id", from: "field_banner___NODE")
+  DrupalEntity_subqueue__information_tiles: [DrupalEntity_subqueue__information_tiles] @link(by: "id", from: "DrupalEntity_subqueue__information_tiles___NODE")
+  DrupalEntity_subqueue__promotional_links: [DrupalEntity_subqueue__promotional_links] @link(by: "id", from: "DrupalEntity_subqueue__promotional_links___NODE")
+}
+
+type DrupalTaxonomy_term__automated_contextual_content implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__tid: Int
+  drupal_internal__revision_id: Int
+  langcode: String
+  revision_created: Date @dateformat
+  status: Boolean
+  name: String
+  weight: Int
+  changed: Date @dateformat
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  path: DrupalTaxonomy_term__automated_contextual_contentPath
+  rh_action: String
+  rh_redirect_response: Int
+  relationships: DrupalTaxonomy_term__automated_contextual_contentRelationships
+  vid: DrupalTaxonomy_term__automated_contextual_contentVid
+}
+
+type DrupalTaxonomy_term__automated_contextual_contentPath {
+  langcode: String
+}
+
+type DrupalTaxonomy_term__automated_contextual_contentRelationships {
+  DrupalNode__page: [DrupalNode__page] @link(by: "id", from: "DrupalNode__page___NODE")
+}
+
+type DrupalTaxonomy_term__automated_contextual_contentVid {
+  drupal_internal__target_id: String
+}
+
+type DrupalTaxonomy_term__page_variants implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__tid: Int
+  drupal_internal__revision_id: Int
+  langcode: String
+  revision_created: Date @dateformat
+  status: Boolean
+  name: String
+  weight: Int
+  changed: Date @dateformat
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  path: DrupalTaxonomy_term__page_variantsPath
+  relationships: DrupalTaxonomy_term__page_variantsRelationships
+  vid: DrupalTaxonomy_term__page_variantsVid
+}
+
+type DrupalTaxonomy_term__page_variantsPath {
+  langcode: String
+}
+
+type DrupalTaxonomy_term__page_variantsRelationships {
+  DrupalNode__page: [DrupalNode__page] @link(by: "id", from: "DrupalNode__page___NODE")
+}
+
+type DrupalTaxonomy_term__page_variantsVid {
+  drupal_internal__target_id: String
+}
+
+type DrupalEntity_subqueue__promotional_links implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__name: String
+  drupal_internal__revision_id: Int
+  langcode: String
+  revision_created: Date @dateformat
+  status: Boolean
+  title: String
+  created: Date @dateformat
+  changed: Date @dateformat
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  relationships: DrupalEntity_subqueue__promotional_linksRelationships
+  queue: DrupalEntity_subqueue__promotional_linksQueue
+  revision_user: DrupalEntity_subqueue__promotional_linksRevision_user
+  uid: DrupalEntity_subqueue__promotional_linksUid
+  items: [DrupalEntity_subqueue__promotional_linksItems]
+}
+
+type DrupalEntity_subqueue__promotional_linksRelationships {
+  queue: DrupalEntity_queue__entity_queue @link(by: "id", from: "queue___NODE")
+  revision_user: DrupalUser__user @link(by: "id", from: "revision_user___NODE")
+  uid: DrupalUser__user @link(by: "id", from: "uid___NODE")
+  items: [DrupalNode__articleDrupalNode__pageUnion] @link(by: "id", from: "items___NODE")
+}
+
+union DrupalNode__articleDrupalNode__pageUnion = DrupalNode__article | DrupalNode__page
+
+type DrupalEntity_subqueue__promotional_linksQueue {
+  drupal_internal__target_id: String
+}
+
+type DrupalEntity_subqueue__promotional_linksRevision_user {
+  drupal_internal__target_id: Int
+}
+
+type DrupalEntity_subqueue__promotional_linksUid {
+  drupal_internal__target_id: Int
+}
+
+type DrupalEntity_subqueue__promotional_linksItems {
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__pageNode_type {
+  drupal_internal__target_id: String
+}
+
+type DrupalNode__pageRevision_uid {
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__pageUid {
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__pageField_auto_contextual_content @derivedTypes {
+  links: DrupalNode__pageField_auto_contextual_contentLinks
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__pageField_auto_contextual_contentLinks @derivedTypes {
+  help: DrupalNode__pageField_auto_contextual_contentLinksHelp
+}
+
+type DrupalNode__pageField_auto_contextual_contentLinksHelp @derivedTypes {
+  href: String
+  meta: DrupalNode__pageField_auto_contextual_contentLinksHelpMeta
+}
+
+type DrupalNode__pageField_auto_contextual_contentLinksHelpMeta {
+  about: String
+}
+
+type DrupalNode__pageField_page_variant {
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__pageField_banner {
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__pageField_related_files {
+  drupal_internal__target_id: Int
+}
+
+type DrupalMedia__imageBundle {
+  drupal_internal__target_id: String
+}
+
+type DrupalMedia__imageUid {
+  drupal_internal__target_id: Int
+}
+
+type DrupalMedia__imageThumbnail {
+  alt: String
+  title: String
+  width: Int
+  height: Int
+  drupal_internal__target_id: Int
+}
+
+type DrupalMedia__imageField_media_image {
+  alt: String
+  title: String
+  width: Int
+  height: Int
+  drupal_internal__target_id: Int
+}
+
+type DrupalMedia__imageField_tags {
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__article implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__nid: Int
+  drupal_internal__vid: Int
+  langcode: String
+  revision_timestamp: Date @dateformat
+  status: Boolean
+  title: String
+  created: Date @dateformat
+  changed: Date @dateformat
+  promote: Boolean
+  sticky: Boolean
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  path: DrupalNode__articlePath
+  rh_action: String
+  rh_redirect_response: Int
+  body: DrupalNode__articleBody
+  field_issue_date: Date @dateformat
+  field_last_updated: Date @dateformat
+  field_related_links: [DrupalNode__articleField_related_links]
+  relationships: DrupalNode__articleRelationships
+  node_type: DrupalNode__articleNode_type
+  revision_uid: DrupalNode__articleRevision_uid
+  uid: DrupalNode__articleUid
+  field_article_type: DrupalNode__articleField_article_type
+  field_related_files: [DrupalNode__articleField_related_files]
+}
+
+type DrupalNode__articlePath {
+  alias: String
+  pid: Int
+  langcode: String
+}
+
+type DrupalNode__articleBody {
+  value: String
+  format: String
+  processed: String
+  summary: String
+}
+
+type DrupalNode__articleField_related_links {
+  uri: String
+  title: String
+}
+
+type DrupalNode__articleRelationships {
+  DrupalEntity_subqueue__promotional_links: [DrupalEntity_subqueue__promotional_links] @link(by: "id", from: "DrupalEntity_subqueue__promotional_links___NODE")
+  node_type: DrupalNode_type__node_type @link(by: "id", from: "node_type___NODE")
+  revision_uid: DrupalUser__user @link(by: "id", from: "revision_uid___NODE")
+  uid: DrupalUser__user @link(by: "id", from: "uid___NODE")
+  field_article_type: DrupalTaxonomy_term__article_types @link(by: "id", from: "field_article_type___NODE")
+  field_related_files: [DrupalMedia__file] @link(by: "id", from: "field_related_files___NODE")
+}
+
+type DrupalTaxonomy_term__article_types implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__tid: Int
+  drupal_internal__revision_id: Int
+  langcode: String
+  revision_created: Date @dateformat
+  status: Boolean
+  name: String
+  weight: Int
+  changed: Date @dateformat
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  path: DrupalTaxonomy_term__article_typesPath
+  relationships: DrupalTaxonomy_term__article_typesRelationships
+  vid: DrupalTaxonomy_term__article_typesVid
+}
+
+type DrupalTaxonomy_term__article_typesPath {
+  langcode: String
+}
+
+type DrupalTaxonomy_term__article_typesRelationships {
+  DrupalNode__article: [DrupalNode__article] @link(by: "id", from: "DrupalNode__article___NODE")
+}
+
+type DrupalTaxonomy_term__article_typesVid {
+  drupal_internal__target_id: String
+}
+
+type DrupalNode__articleNode_type {
+  drupal_internal__target_id: String
+}
+
+type DrupalNode__articleRevision_uid {
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__articleUid {
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__articleField_article_type {
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__articleField_related_files {
+  drupal_internal__target_id: Int
+}
+
+type DrupalMedia__fileBundle {
+  drupal_internal__target_id: String
+}
+
+type DrupalMedia__fileUid {
+  drupal_internal__target_id: Int
+}
+
+type DrupalMedia__fileThumbnail {
+  alt: String
+  width: Int
+  height: Int
+  drupal_internal__target_id: Int
+}
+
+type DrupalMedia__fileField_media_file {
+  display: Boolean
+  description: String
+  drupal_internal__target_id: Int
+}
+
+type DrupalMedia__fileField_tags {
+  drupal_internal__target_id: Int
+}
+
+type DrupalTaxonomy_term__resource_types implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__tid: Int
+  drupal_internal__revision_id: Int
+  langcode: String
+  revision_created: Date @dateformat
+  status: Boolean
+  name: String
+  weight: Int
+  changed: Date @dateformat
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  path: DrupalTaxonomy_term__resource_typesPath
+  relationships: DrupalTaxonomy_term__resource_typesRelationships
+  vid: DrupalTaxonomy_term__resource_typesVid
+}
+
+type DrupalTaxonomy_term__resource_typesPath {
+  langcode: String
+}
+
+type DrupalTaxonomy_term__resource_typesRelationships {
+  DrupalNode__resource: [DrupalNode__resource] @link(by: "id", from: "DrupalNode__resource___NODE")
+}
+
+type DrupalTaxonomy_term__resource_typesVid {
+  drupal_internal__target_id: String
+}
+
+type DrupalNode__resourceNode_type {
+  drupal_internal__target_id: String
+}
+
+type DrupalNode__resourceRevision_uid {
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__resourceUid {
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__resourceField_resource_type {
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__resourceField_related_files {
+  drupal_internal__target_id: Int
+}
+
+type DrupalTaxonomy_term__promotion_type implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__tid: Int
+  drupal_internal__revision_id: Int
+  langcode: String
+  revision_created: Date @dateformat
+  status: Boolean
+  name: String
+  weight: Int
+  changed: Date @dateformat
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  path: DrupalTaxonomy_term__promotion_typePath
+  relationships: DrupalTaxonomy_term__promotion_typeRelationships
+  vid: DrupalTaxonomy_term__promotion_typeVid
+}
+
+type DrupalTaxonomy_term__promotion_typePath {
+  langcode: String
+}
+
+type DrupalTaxonomy_term__promotion_typeRelationships {
+  DrupalNode__promotion: [DrupalNode__promotion] @link(by: "id", from: "DrupalNode__promotion___NODE")
+}
+
+type DrupalTaxonomy_term__promotion_typeVid {
+  drupal_internal__target_id: String
+}
+
+type DrupalNode__promotionNode_type {
+  drupal_internal__target_id: String
+}
+
+type DrupalNode__promotionRevision_uid {
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__promotionUid {
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__promotionField_promotion_type {
+  drupal_internal__target_id: Int
+}
+
+type DrupalNode__promotionField_teaser {
+  drupal_internal__target_id: Int
+}
+
+type DrupalEntity_subqueue__promotional_tilesQueue {
+  drupal_internal__target_id: String
+}
+
+type DrupalEntity_subqueue__promotional_tilesRevision_user {
+  drupal_internal__target_id: Int
+}
+
+type DrupalEntity_subqueue__promotional_tilesUid {
+  drupal_internal__target_id: Int
+}
+
+type DrupalEntity_subqueue__promotional_tilesItems {
+  drupal_internal__target_id: Int
+}
+
+type DrupalEntity_subqueue__information_tilesQueue {
+  drupal_internal__target_id: String
+}
+
+type DrupalEntity_subqueue__information_tilesRevision_user {
+  drupal_internal__target_id: Int
+}
+
+type DrupalEntity_subqueue__information_tilesUid {
+  drupal_internal__target_id: Int
+}
+
+type DrupalEntity_subqueue__information_tilesItems {
+  drupal_internal__target_id: Int
+}
+
+type DrupalTaxonomy_term__copyright_licensing implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__tid: Int
+  drupal_internal__revision_id: Int
+  langcode: String
+  revision_created: Date @dateformat
+  status: Boolean
+  name: String
+  description: DrupalTaxonomy_term__copyright_licensingDescription
+  weight: Int
+  changed: Date @dateformat
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  path: DrupalTaxonomy_term__copyright_licensingPath
+  field_cc_code: DrupalTaxonomy_term__copyright_licensingField_cc_code
+  field_cc_licence_long: DrupalTaxonomy_term__copyright_licensingField_cc_licence_long
+  field_copyright_link: DrupalTaxonomy_term__copyright_licensingField_copyright_link
+  vid: DrupalTaxonomy_term__copyright_licensingVid
+}
+
+type DrupalTaxonomy_term__copyright_licensingDescription {
+  value: String
+  format: String
+  processed: String
+}
+
+type DrupalTaxonomy_term__copyright_licensingPath {
+  langcode: String
+}
+
+type DrupalTaxonomy_term__copyright_licensingField_cc_code {
+  value: String
+  format: String
+  processed: String
+}
+
+type DrupalTaxonomy_term__copyright_licensingField_cc_licence_long {
+  value: String
+  format: String
+  processed: String
+}
+
+type DrupalTaxonomy_term__copyright_licensingField_copyright_link {
+  uri: String
+  title: String
+}
+
+type DrupalTaxonomy_term__copyright_licensingVid {
+  drupal_internal__target_id: String
+}
+
+type DrupalMenu__menu implements Node @dontInfer {
+  drupal_id: String
+  label: String
+}
+
+type DrupalGatsby_log_entity__gatsby_log_entity implements Node @dontInfer {
+  drupal_id: String
+  drupal_internal__id: Int
+  langcode: String
+  entity_uuid: String
+  title: String
+  entity: String
+  bundle: String
+  action: String
+  published: Boolean
+  preview: Boolean
+  json: String
+  created: Date @dateformat
+}
+
+type DrupalDate_format__date_format implements Node @dontInfer {
+  drupal_id: String
+  label: String
+}
+
+type DrupalBlock_content__basic implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  drupal_internal__id: Int
+  drupal_internal__revision_id: Int
+  langcode: String
+  revision_created: Date @dateformat
+  status: Boolean
+  info: String
+  changed: Date @dateformat
+  reusable: Boolean
+  default_langcode: Boolean
+  revision_translation_affected: Boolean
+  body: DrupalBlock_content__basicBody
+  block_content_type: DrupalBlock_content__basicBlock_content_type
+}
+
+type DrupalBlock_content__basicBody {
+  value: String
+  format: String
+  processed: String
+  summary: String
+}
+
+type DrupalBlock_content__basicBlock_content_type {
+  drupal_internal__target_id: String
+}
+
+type DrupalBlock__block implements Node @derivedTypes @dontInfer {
+  drupal_id: String
+  langcode: String
+  status: Boolean
+  dependencies: DrupalBlock__blockDependencies
+  third_party_settings: DrupalBlock__blockThird_party_settings
+  drupal_internal__id: String
+  theme: String
+  region: String
+  weight: Int
+  plugin: String
+  settings: DrupalBlock__blockSettings
+  visibility: DrupalBlock__blockVisibility
+}
+
+type DrupalBlock__blockDependencies {
+  module: [String]
+  theme: [String]
+  config: [String]
+}
+
+type DrupalBlock__blockThird_party_settings @derivedTypes {
+  block_class: DrupalBlock__blockThird_party_settingsBlock_class
+}
+
+type DrupalBlock__blockThird_party_settingsBlock_class {
+  classes: String
+}
+
+type DrupalBlock__blockSettings {
+  id: String
+  label: String
+  label_display: String
+  provider: String
+  status: Boolean
+  info: String
+  view_mode: String
+  primary: Boolean
+  secondary: Boolean
+  follow: Int
+  follow_parent: String
+  level: Int
+  depth: Int
+  expand_all_items: Boolean
+  parent: String
+  suggestion: String
+  label_type: String
+  label_link: Boolean
+  expand: Int
+  views_label: String
+  use_site_logo: Boolean
+  use_site_name: Boolean
+  use_site_slogan: Boolean
+}
+
+type DrupalBlock__blockVisibility @derivedTypes {
+  term: DrupalBlock__blockVisibilityTerm
+  request_path: DrupalBlock__blockVisibilityRequest_path
+}
+
+type DrupalBlock__blockVisibilityTerm @derivedTypes {
+  id: String
+  tid: [DrupalBlock__blockVisibilityTermTid]
+  negate: Boolean
+  context_mapping: DrupalBlock__blockVisibilityTermContext_mapping
+}
+
+type DrupalBlock__blockVisibilityTermTid {
+  target_id: String
+}
+
+type DrupalBlock__blockVisibilityTermContext_mapping {
+  node: String
+}
+
+type DrupalBlock__blockVisibilityRequest_path {
+  id: String
+  pages: String
+  negate: Boolean
+}
