@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
-
-import Layout from '../layouts';
-import Container from '../components/container';
+import React from "react"
+import { Link, graphql } from "gatsby"
+import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
+import Layout from "../layouts"
+import Container from "../components/container"
 
 const Pages = ({ data }) => (
   <Layout>
@@ -17,9 +17,9 @@ const Pages = ({ data }) => (
       </ul>
     </Container>
   </Layout>
-);
+)
 
-export default Pages;
+export default Pages
 
 export const query = graphql`
   query {
@@ -34,4 +34,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

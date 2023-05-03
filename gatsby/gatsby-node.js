@@ -14,7 +14,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
     query {
-      allDrupalNodePage(limit: 10) {
+      allDrupalNodePage(limit: 100) {
         edges {
           node {
             id

@@ -3,8 +3,9 @@
 - `mkdir gatsby`
 - `cd drupal`
 - `ddev config` (See my ddev config example)
-- `ddev composer require drupal/gatsby`
+- `ddev composer require drupal/gatsby:^2.0.x-dev`
 - `ddev start`
+- `ddev drush sqlc < demodb.sql` (if you want to you the demo db)
 - `ddev drush uli`
 
 ## Enable Drupal Modules:
@@ -22,7 +23,6 @@
 - `nvm use 19`
 - `yarn install`
 - `yarn setup` (see .env.EXAMPLE)
-Then back to Gatsby Frontend
 - `yarn start`
 
 ## Are you doing this from Scratch?

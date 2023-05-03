@@ -1,10 +1,9 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
-// import gray from 'gray-percentage';
-// import Img from 'gatsby-image';
+import React from "react"
+import { Link, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import Layout from '../layouts';
-import Container from '../components/container';
+import Layout from "../layouts"
+import Container from "../components/container"
 
 // class IndexPage extends React.Component {
 //   render() {
@@ -28,38 +27,50 @@ const IndexPage = ({ data }) => {
                   <li key={index}>
                     <Link to={item.path.alias}>{item.title}</Link>
                   </li>
-                );
+                )
               })}
             </ul>
           </Container>
         </div>
       </div>
     </Layout>
-  );
-};
-// }
+  )
+}
 
-export default IndexPage;
+export default IndexPage
 
 export const pageQuery = graphql`
   {
-    mostRecent: allDrupalNodePage(sort: { created: ASC }, limit: 3) {
+    mostRecent: allDrupalNodePage(sort: { created: ASC }, limit: 5) {
       nodes {
         title
         drupal_internal__nid
         uid {
           drupal_internal__target_id
         }
-        relationships {
-          node_type {
-            name
-          }
-        }
         path {
           alias
+        }
+        relationships {
+          field_banner {
+            field_media_image {
+              alt
+              title
+              width
+              height
+              __typename
+            }
+            relationships {
+              field_media_image {
+                localFile {
+                  url
+                }
+              }
+            }
+          }
         }
       }
       totalCount
     }
   }
-`;
+`
