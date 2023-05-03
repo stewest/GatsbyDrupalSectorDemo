@@ -7,13 +7,13 @@ dependencies:
   module:
     - block
     - block_class
+    - content_moderation
     - entity_usage
     - filter
     - media
     - redirect
     - system
     - taxonomy
-    - view_unpublished
     - xmlsitemap
 _core:
   default_config_hash: 9jOj4RsA20EHFIWcgScBonwATBCvc49aZyCPuST-MO4

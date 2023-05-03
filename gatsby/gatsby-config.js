@@ -12,17 +12,14 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        apiBase: `api`,
         typePrefix: "Drupal",
-        fastBuilds: true,
-        baseUrl: process.env.DRUPAL_BASE_URL,
+        apiBase: `api`,
+        baseUrl: `https://drupalsector.ddev.site/`,
+        concurrentFileRequests: 2,
         basicAuth: {
           username: process.env.DRUPAL_BASIC_AUTH_USERNAME,
           password: process.env.DRUPAL_BASIC_AUTH_PASSWORD,
         },
-        // headers: {
-        //   "api-key": process.env.JSON_API_KEY,
-        // },
       },
     },
     `gatsby-plugin-offline`,

@@ -8,6 +8,7 @@ dependencies:
     - filter.format.teaser_display_text
     - node.type.article
     - node.type.page
+    - node.type.promotion
     - node.type.resource
   module:
     - contextual

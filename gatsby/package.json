@@ -10,6 +10,7 @@
     "gatsby-plugin-glamor": "next",
     "gatsby-plugin-google-analytics": "next",
     "gatsby-plugin-offline": "next",
+    "gatsby-plugin-schema-snapshot": "^4.9.0",
     "gatsby-plugin-sharp": "next",
     "gatsby-plugin-typography": "next",
     "gatsby-source-drupal": "next",
@@ -29,11 +30,11 @@
   },
   "devDependencies": {
     "chalk": "^4.1.0",
-    "inquirer": "^8.2.0",
-    "yargs": "^17.3.1",
-    "prettier": "2.5.1",
     "husky": "^7.0.4",
-    "lint-staged": "^12.3.5"
+    "inquirer": "^8.2.0",
+    "lint-staged": "^12.3.5",
+    "prettier": "2.5.1",
+    "yargs": "^17.3.1"
   },
   "keywords": [
     "gatsby"
@@ -47,4 +48,3 @@
     "setup": "node ./scripts/setup.js"
   }
 }
-

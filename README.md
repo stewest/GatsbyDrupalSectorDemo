@@ -3,7 +3,7 @@
 - `mkdir gatsby`
 - `cd drupal`
 - `ddev config` (See my ddev config example)
-- `composer require drupal/gatsby`
+- `ddev composer require drupal/gatsby`
 - `ddev start`
 - `ddev drush uli`
 
@@ -11,9 +11,10 @@
 - If you're using the example demodb.sql this will already be installed.
 * Gatsby
 * Gatsby JSON:API Extras
+* Key Authentication
 ### Notice:
   You must enable the Content Moderation, Workflows, JSON:API Extras, JSON:API modules to install Gatsby.
-  (I had to enable this via drush to get it to work)
+  (I had to enable this via drush to get it to work properly)
 
 # GATSBY Frontend
 - `cd gatsby`
@@ -21,8 +22,8 @@
 - `nvm use 19`
 - `yarn install`
 - `yarn setup` (see .env.EXAMPLE)
+Then back to Gatsby Frontend
 - `yarn start`
-
 
 ## Are you doing this from Scratch?
 

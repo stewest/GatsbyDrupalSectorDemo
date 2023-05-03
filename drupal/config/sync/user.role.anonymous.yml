@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - gatsby
     - media
     - system
     - video_embed_field
@@ -20,3 +21,5 @@ permissions:
   - 'search content'
   - 'view files'
   - 'view media'
+  - 'sync gatsby fastbuild log entities'
+  - 'view gatsby log entity entities'
