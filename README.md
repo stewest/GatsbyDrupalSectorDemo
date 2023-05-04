@@ -2,7 +2,7 @@
 - `mkdir drupal`
 - `mkdir gatsby`
 - `cd drupal`
-- `ddev config` (See my ddev config example)
+- `ddev config` (See ddev config example below- use the name *drupalsector*)
 - `ddev composer require drupal/gatsby:^2.0.x-dev`
 - `ddev start`
 - `ddev drush sqlc < demodb.sql` (if you want to you the demo db)
@@ -12,7 +12,7 @@
 - If you're using the example demodb.sql this will already be installed.
 * Gatsby
 * Gatsby JSON:API Extras
-* Key Authentication
+
 ### Notice:
   You must enable the Content Moderation, Workflows, JSON:API Extras, JSON:API modules to install Gatsby.
   (I had to enable this via drush to get it to work properly)
