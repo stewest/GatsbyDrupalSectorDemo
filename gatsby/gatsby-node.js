@@ -14,7 +14,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
     query {
-      allDrupalNodePage(limit: 100) {
+      allDrupalNodePage(limit: 1000) {
         edges {
           node {
             id
@@ -31,11 +31,18 @@ exports.createPages = async function ({ actions, graphql }) {
   const handlePath = (pathInput) => {
     if (pathInput != null) {
       return pathInput
-    } else {
+    } else if (pathInput == "/home") {
       return "/"
+    } else if (pathInput == "/404") {
+      return "/404"
+    } else if (pathInput == "/403") {
+      return "/403"
+    } else {
+      return
     }
   }
 
+  // Node type Pages
   data.allDrupalNodePage.edges.forEach((edge) => {
     const slug = handlePath(edge.node.path?.alias)
 

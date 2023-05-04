@@ -5,16 +5,19 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../layouts"
 import Container from "../components/container"
 
-// class IndexPage extends React.Component {
-//   render() {
-// const data = this.props.data;
-
 const IndexPage = ({ data }) => {
+  const image = getImage(
+    data.page?.relationships?.field_banner?.relationships?.thumbnail?.localFile
+  )
   return (
     <Layout>
       <div>
         <Container>
-          <h1>Welcome</h1>
+          <GatsbyImage
+            image={image}
+            alt={data?.page?.relationships?.field_banner?.field_media_image.alt}
+          />
+          <h1>{data.page.title}</h1>
         </Container>
 
         <div>
@@ -41,6 +44,34 @@ export default IndexPage
 
 export const pageQuery = graphql`
   {
+    page: drupalNodePage(drupal_internal__nid: { eq: 10 }) {
+      __typename
+      title
+      body {
+        processed
+      }
+      relationships {
+        field_banner {
+          field_media_image {
+            alt
+          }
+          relationships {
+            thumbnail {
+              filename
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(width: 1920)
+                  fluid {
+                    srcSet
+                    src
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     mostRecent: allDrupalNodePage(sort: { created: ASC }, limit: 5) {
       nodes {
         title
