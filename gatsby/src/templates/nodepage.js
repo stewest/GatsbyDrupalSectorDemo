@@ -52,7 +52,7 @@ export const query = graphql`
               filename
               localFile {
                 childImageSharp {
-                  gatsbyImageData(width: 600)
+                  gatsbyImageData(width: 1920)
                   fluid {
                     srcSet
                     src
