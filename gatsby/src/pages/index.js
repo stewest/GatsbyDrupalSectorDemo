@@ -1,9 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-
+import { getImage } from "gatsby-plugin-image"
 import Layout from "../layouts"
 import Container from "../components/container"
+import HeroSection from "../components/HeroSection"
 
 const IndexPage = ({ data }) => {
   const image = getImage(
@@ -11,15 +11,14 @@ const IndexPage = ({ data }) => {
   )
   return (
     <Layout>
+      <HeroSection
+        title={data.page.title}
+        subtitle={data.page.subtitle}
+        description={data.page.body}
+        heroImg={image}
+        alt={data.page.relationships.field_banner.field_media_image.alt}
+      />
       <div>
-        <Container>
-          <GatsbyImage
-            image={image}
-            alt={data?.page?.relationships?.field_banner?.field_media_image.alt}
-          />
-          <h1>{data.page.title}</h1>
-        </Container>
-
         <div>
           <Container>
             <h2>Most recent pages</h2>

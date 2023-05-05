@@ -1,36 +1,24 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from "react"
+import { Link } from "gatsby"
+import Container from "../components/container"
 
-import 'typeface-rochester';
-import 'typeface-josefin-sans';
-import 'typeface-josefin-slab';
+const DefaultLayout = ({ children }) => {
+  return (
+    <div>
+      <Container>
+        <div>
+          {children}
+          <Link to="/pages/">See Pages Listing</Link>
+        </div>
+      </Container>
 
-// import { rhythm, scale } from "../utils/typography"
-// import constants from "../utils/constants"
-import Container from '../components/container';
-
-class DefaultLayout extends React.Component {
-  render() {
-    return (
-      <div>
-        <header>
-          <h1>Drupal and Gatsby</h1>
-        </header>
+      <footer>
         <Container>
-          <div>
-            {this.props.children}
-            <Link to='/pages/'>See Pages Listing</Link>
-          </div>
+          <div>Copyright {new Date().getFullYear()} Terms & Conditions</div>
         </Container>
-
-        <footer>
-          <Container>
-            <div>Copyright {new Date().getFullYear()} Terms & Conditions</div>
-          </Container>
-        </footer>
-      </div>
-    );
-  }
+      </footer>
+    </div>
+  )
 }
 
-export default DefaultLayout;
+export default DefaultLayout

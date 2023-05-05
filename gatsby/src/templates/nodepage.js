@@ -7,7 +7,7 @@ import Container from "../components/container"
 
 const PageTemplate = ({ data }) => {
   const image = getImage(
-    data.page?.relationships?.field_banner?.relationships?.thumbnail?.localFile
+    data.page.relationships.field_banner.relationships.thumbnail.localFile
   )
 
   return (
@@ -16,7 +16,7 @@ const PageTemplate = ({ data }) => {
         <Container>
           <GatsbyImage
             image={image}
-            alt={data?.page?.relationships?.field_banner?.field_media_image.alt}
+            alt={data.page.relationships.field_banner.field_media_image.alt}
           />
           <h1>{data.page.title}</h1>
           {data.page.body ? (
