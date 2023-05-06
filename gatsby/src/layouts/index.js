@@ -1,19 +1,15 @@
 import React from "react"
-import { Link } from "gatsby"
 import Container from "../components/container"
 
 const DefaultLayout = ({ children }) => {
   return (
     <div>
       <Container>
-        <div>
-          {children}
-          <Link to="/pages/">See Pages Listing</Link>
-        </div>
+        <div>{children}</div>
       </Container>
 
-      <footer>
-        <Container>
+      <footer className="border-t border-t-gray-300 bg-gray-700 text-white">
+        <Container className="mx-auto max-w-2xl py-10">
           <div>Copyright {new Date().getFullYear()} Terms & Conditions</div>
         </Container>
       </footer>

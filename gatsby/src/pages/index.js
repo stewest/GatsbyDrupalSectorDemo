@@ -18,23 +18,22 @@ const IndexPage = ({ data }) => {
         heroImg={image}
         alt={data.page.relationships.field_banner.field_media_image.alt}
       />
-      <div>
-        <div>
-          <Container>
-            <h2>Most recent pages</h2>
+      <Container className="mx-auto max-w-2xl py-10 px-6">
+        <h2 className="text-4xl mb-5">Most recent pages</h2>
 
-            <ul>
-              {data.mostRecent.nodes.map((item, index) => {
-                return (
-                  <li key={index}>
-                    <Link to={item.path.alias}>{item.title}</Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </Container>
-        </div>
-      </div>
+        <ul>
+          {data.mostRecent.nodes.map((item, index) => {
+            return (
+              <li key={index} className="pl-2 list-disc ml-4">
+                <Link to={item.path.alias}>{item.title}</Link>
+              </li>
+            )
+          })}
+        </ul>
+        <section className="pt-10">
+          <Link to="/pages/">See All Pages List</Link>
+        </section>
+      </Container>
     </Layout>
   )
 }

@@ -2,14 +2,16 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../layouts"
 import Container from "../components/container"
+import Header from "../components/Header"
 
 const Pages = ({ data }) => (
   <Layout>
-    <Container>
-      <h1>Pages</h1>
+    <Header />
+    <Container className="mx-auto max-w-2xl py-10 mt-20 px-6">
+      <h1 className="text-5xl mb-10">Pages</h1>
       <ul>
         {data.pages.edges.map(({ node }) => (
-          <li key={node.path.alias}>
+          <li key={node.path.alias} className="pl-2 list-disc ml-4 mb-1">
             <Link to={node.path.alias}>{node.title}</Link>
           </li>
         ))}

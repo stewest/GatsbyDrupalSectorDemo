@@ -1,6 +1,8 @@
 # Drupal & Gatsby Demo
 - `mkdir drupal`
 - `mkdir gatsby`
+
+## Drupal
 - `cd drupal`
 - `ddev config` (See ddev config example below- use the name *drupalsector*)
 - `ddev composer require drupal/gatsby:^2.0.x-dev`
@@ -24,6 +26,13 @@
 - `yarn install`
 - `yarn setup` (see .env.EXAMPLE)
 - `yarn start`
+
+You'll notice that we've set gatbsy develop to use https, and allow connection without a ssl certificate - this is for this local dev demo only! For live preview we need ENABLE_GATSBY_REFRESH_ENDPOINT=true enabled.
+
+```
+NODE_TLS_REJECT_UNAUTHORIZED=0 ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop --https
+info setting up automatic SSL certificate (may require elevated permissions/sudo)
+```
 
 ## Are you doing this from Scratch?
 

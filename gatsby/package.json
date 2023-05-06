@@ -8,6 +8,7 @@
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.17",
     "autoprefixer": "^10.4.14",
+    "clsx": "^1.2.1",
     "gatsby": "next",
     "gatsby-plugin-glamor": "next",
     "gatsby-plugin-google-analytics": "next",
@@ -48,7 +49,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "develop": "NODE_TLS_REJECT_UNAUTHORIZED=0 ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop --https",
+    "develop": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop --https",
     "build": "gatsby build",
     "start": "npm run develop",
     "setup": "node ./scripts/setup.js"
