@@ -50,7 +50,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "develop": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop --https -H 0.0.0.0",
+    "develop": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop -H 0.0.0.0",
     "build": "gatsby build",
     "start": "npm run develop",
     "setup": "node ./scripts/setup.js"

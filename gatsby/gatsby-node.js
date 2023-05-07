@@ -1,14 +1,14 @@
 // https://www.gatsbyjs.com/plugins/gatsby-source-drupal/
-
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    watchOptions: {
-      aggregateTimeout: 200,
-      poll: 1000,
-      ignored: "**/node_modules",
-    },
-  })
-}
+// IF using Gatsby IN a Docker container
+// exports.onCreateWebpackConfig = ({ actions }) => {
+//   actions.setWebpackConfig({
+//     watchOptions: {
+//       aggregateTimeout: 200,
+//       poll: 1000,
+//       ignored: "**/node_modules",
+//     },
+//   })
+// }
 
 //https://www.gatsbyjs.com/docs/programmatically-create-pages-from-data/
 exports.createPages = async function ({ actions, graphql }) {

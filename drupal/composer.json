@@ -16,6 +16,7 @@
         "drupal/core-composer-scaffold": "^9.5",
         "drupal/core-recommended": "^9.5",
         "drupal/gatsby": "^2.0.x-dev",
+        "drupal/jsonapi_menu_items": "^1.2",
         "drupal/key_auth": "^2.1",
         "drupal/sector_tonic": "^1.0",
         "drush/drush": "^10.0",

@@ -13,10 +13,11 @@ module.exports = {
       resolve: `gatsby-source-drupal`,
       options: {
         typePrefix: "Drupal",
-        apiBase: `api`,
-        baseUrl: `https://drupalsector.ddev.site/`,
+        apiBase: `jsonapi`,
+        baseUrl: process.env.DRUPAL_BASE_URL,
         concurrentFileRequests: 2,
         fastBuilds: true,
+        menus: ["main", "main-menu", "account"],
         basicAuth: {
           username: process.env.DRUPAL_BASIC_AUTH_USERNAME,
           password: process.env.DRUPAL_BASIC_AUTH_PASSWORD,
