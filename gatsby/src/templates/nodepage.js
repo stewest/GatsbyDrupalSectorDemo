@@ -56,11 +56,11 @@ export const query = graphql`
               filename
               localFile {
                 childImageSharp {
-                  gatsbyImageData(width: 1920)
-                  fluid {
-                    srcSet
-                    src
-                  }
+                  gatsbyImageData(
+                    width: 1920
+                    placeholder: BLURRED
+                    layout: FULL_WIDTH
+                  )
                 }
               }
             }

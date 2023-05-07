@@ -18,6 +18,7 @@
     "gatsby-plugin-sharp": "^5.9.0",
     "gatsby-plugin-typography": "next",
     "gatsby-source-drupal": "next",
+    "gatsby-source-drupal-menu-links": "^3.0.1",
     "gatsby-source-filesystem": "^5.9.0",
     "gatsby-transformer-sharp": "^5.9.0",
     "glamor": "^2.20.40",
@@ -49,7 +50,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "develop": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop --https",
+    "develop": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop --https -H 0.0.0.0",
     "build": "gatsby build",
     "start": "npm run develop",
     "setup": "node ./scripts/setup.js"
