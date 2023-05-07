@@ -4,6 +4,7 @@ import { getImage } from "gatsby-plugin-image"
 import Layout from "../layouts"
 import Container from "../components/container"
 import HeroSection from "../components/HeroSection"
+import { handlePath } from "../utils/helperFunctions"
 
 const IndexPage = ({ data }) => {
   const image = getImage(
@@ -23,9 +24,14 @@ const IndexPage = ({ data }) => {
 
         <ul>
           {data.mostRecent.nodes.map((item, index) => {
+            const getPath = handlePath(
+              item.path.alias,
+              item.drupal_internal__nid
+            )
+
             return (
               <li key={index} className="pl-2 list-disc ml-4">
-                <Link to={item.path.alias}>{item.title}</Link>
+                <Link to={getPath}>{item.title}</Link>
               </li>
             )
           })}

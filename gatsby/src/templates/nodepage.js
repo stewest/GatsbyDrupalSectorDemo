@@ -43,6 +43,7 @@ export const query = graphql`
     page: drupalNodePage(id: { eq: $id }) {
       __typename
       title
+      drupal_internal__nid
       body {
         processed
       }
