@@ -6,7 +6,7 @@
 - `cd drupal`
 - `ddev config` (See ddev config example below- use the name *drupalsector*)
 - `ddev composer require drupal/gatsby:^2.0.x-dev` (enable this)
-- `ddev composer require jsonapi_menu_items` (enable this)
+- `ddev composer require jsonapi_menu_items` (enable this) ##TODO##
 - `ddev start`
 - `ddev drush sqlc < demodb.sql` (if you want to you the demo db)
 - `ddev drush uli`
@@ -19,6 +19,12 @@
 ### Notice:
   You must enable the Content Moderation, Workflows, JSON:API Extras, JSON:API modules to install Gatsby.
   (I had to enable this via drush to get it to work properly)
+
+Add Preview Webhook URL(s)
+`http://localhost:8000/`
+
+Add Preview Webhook URL(s)
+`http://host.docker.internal:8000/__refresh`
 
 # GATSBY Frontend
 - `cd gatsby`
@@ -47,7 +53,7 @@ clone https://github.com/gatsbyjs/gatsby.git GatsbySource
 copy the folder `examples/using-drupal` into your projects `gatbsy` folder
 
 ```
-name: drupalsector
+name: drupal
 type: drupal9
 docroot: web
 php_version: "8.1"
