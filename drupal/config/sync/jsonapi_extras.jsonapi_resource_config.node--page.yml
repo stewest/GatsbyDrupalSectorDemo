@@ -1,0 +1,227 @@
+uuid: ffa327ea-4d44-4f35-a7fc-05c73b579c01
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page
+id: node--page
+disabled: false
+path: node/page
+resourceType: node--page
+resourceFields:
+  nid:
+    disabled: false
+    fieldName: nid
+    publicName: nid
+    enhancer:
+      id: ''
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  vid:
+    disabled: false
+    fieldName: vid
+    publicName: vid
+    enhancer:
+      id: ''
+  langcode:
+    disabled: false
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  type:
+    disabled: false
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  revision_timestamp:
+    disabled: false
+    fieldName: revision_timestamp
+    publicName: revision_timestamp
+    enhancer:
+      id: ''
+  revision_uid:
+    disabled: false
+    fieldName: revision_uid
+    publicName: revision_uid
+    enhancer:
+      id: ''
+  revision_log:
+    disabled: false
+    fieldName: revision_log
+    publicName: revision_log
+    enhancer:
+      id: ''
+  status:
+    disabled: false
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  uid:
+    disabled: false
+    fieldName: uid
+    publicName: uid
+    enhancer:
+      id: ''
+  title:
+    disabled: false
+    fieldName: title
+    publicName: title
+    enhancer:
+      id: ''
+  created:
+    disabled: false
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+  changed:
+    disabled: false
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+  promote:
+    disabled: false
+    fieldName: promote
+    publicName: promote
+    enhancer:
+      id: ''
+  sticky:
+    disabled: false
+    fieldName: sticky
+    publicName: sticky
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: false
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: false
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: false
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  ds_switch:
+    disabled: false
+    fieldName: ds_switch
+    publicName: ds_switch
+    enhancer:
+      id: ''
+  metatag:
+    disabled: false
+    fieldName: metatag
+    publicName: metatag
+    enhancer:
+      id: ''
+  path:
+    disabled: false
+    fieldName: path
+    publicName: path
+    enhancer:
+      id: ''
+  rh_action:
+    disabled: false
+    fieldName: rh_action
+    publicName: rh_action
+    enhancer:
+      id: ''
+  rh_redirect:
+    disabled: false
+    fieldName: rh_redirect
+    publicName: rh_redirect
+    enhancer:
+      id: ''
+  rh_redirect_response:
+    disabled: false
+    fieldName: rh_redirect_response
+    publicName: rh_redirect_response
+    enhancer:
+      id: ''
+  rh_redirect_fallback_action:
+    disabled: false
+    fieldName: rh_redirect_fallback_action
+    publicName: rh_redirect_fallback_action
+    enhancer:
+      id: ''
+  menu_link:
+    disabled: false
+    fieldName: menu_link
+    publicName: menu_link
+    enhancer:
+      id: ''
+  body:
+    disabled: false
+    fieldName: body
+    publicName: body
+    enhancer:
+      id: ''
+  field_auto_contextual_content:
+    disabled: false
+    fieldName: field_auto_contextual_content
+    publicName: field_auto_contextual_content
+    enhancer:
+      id: ''
+  field_banner:
+    disabled: false
+    fieldName: field_banner
+    publicName: field_banner
+    enhancer:
+      id: ''
+  field_last_updated:
+    disabled: false
+    fieldName: field_last_updated
+    publicName: field_last_updated
+    enhancer:
+      id: ''
+  field_metatag:
+    disabled: false
+    fieldName: field_metatag
+    publicName: field_metatag
+    enhancer:
+      id: ''
+  field_page_variant:
+    disabled: false
+    fieldName: field_page_variant
+    publicName: field_page_variant
+    enhancer:
+      id: ''
+  field_related_files:
+    disabled: false
+    fieldName: field_related_files
+    publicName: field_related_files
+    enhancer:
+      id: ''
+  field_related_links:
+    disabled: false
+    fieldName: field_related_links
+    publicName: field_related_links
+    enhancer:
+      id: ''
+  field_subtitle:
+    disabled: false
+    fieldName: field_subtitle
+    publicName: field_subtitle
+    enhancer:
+      id: ''
+  field_teaser:
+    disabled: false
+    fieldName: field_teaser
+    publicName: field_teaser
+    enhancer:
+      id: json
