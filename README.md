@@ -5,7 +5,8 @@
 ## Drupal
 - `cd drupal`
 - `ddev config` (See ddev config example below- use the name *drupalsector*)
-- `ddev composer require drupal/gatsby:^2.0.x-dev`
+- `ddev composer require drupal/gatsby:^2.0.x-dev` (enable this)
+- `ddev composer require jsonapi_menu_items` (enable this)
 - `ddev start`
 - `ddev drush sqlc < demodb.sql` (if you want to you the demo db)
 - `ddev drush uli`
@@ -27,7 +28,12 @@
 - `yarn setup` (see .env.EXAMPLE)
 - `yarn start`
 
-You'll notice that we've set gatbsy develop to use https, and allow connection without a ssl certificate - this is for this local dev demo only! For live preview we need ENABLE_GATSBY_REFRESH_ENDPOINT=true enabled.
+You'll notice that we've set gatbsy develop to use http, and allow connection without a ssl certificate - this is for this local dev demo only! For live preview we need ENABLE_GATSBY_REFRESH_ENDPOINT=true enabled.
+Note: for Preview to work locally, we needed to add the following `-H 0.0.0.0` to `gatsby develop`
+```
+ "develop": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop -H 0.0.0.0",`
+```
+
 
 ```
 NODE_TLS_REJECT_UNAUTHORIZED=0 ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop --https
