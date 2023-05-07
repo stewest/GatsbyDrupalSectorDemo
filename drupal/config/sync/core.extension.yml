@@ -56,6 +56,8 @@ module:
   inline_entity_form: 0
   jsonapi: 0
   jsonapi_extras: 0
+  jsonapi_menu_items: 0
+  jsonapi_resources: 0
   key_auth: 0
   layout_discovery: 0
   link: 0
