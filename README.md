@@ -1,4 +1,11 @@
 # Drupal & Gatsby Demo
+
+
+## Setup
+
+- Install DDEV
+-- https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/
+
 - `mkdir drupal`
 - `mkdir gatsby`
 
@@ -34,26 +41,28 @@ Add Preview Webhook URL(s)
 - `yarn setup` (see .env.EXAMPLE)
 - `yarn start`
 
-You'll notice that we've set gatbsy develop to use http, and allow connection without a ssl certificate - this is for this local dev demo only! For live preview we need ENABLE_GATSBY_REFRESH_ENDPOINT=true enabled.
+You'll notice that we've set gatbsy develop to use http.
+To allow connection without a ssl certificate: enable NODE_TLS_REJECT_UNAUTHORIZED=0
+(this has proven to be a pain - locally)
+
+For live preview we need ENABLE_GATSBY_REFRESH_ENDPOINT=true enabled.
+
+These vars are in the .env.development file.
+
 Note: for Preview to work locally, we needed to add the following `-H 0.0.0.0` to `gatsby develop`
 ```
- "develop": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop -H 0.0.0.0",`
+ "develop": "gatsby develop -H 0.0.0.0",
 ```
 
-
-```
-NODE_TLS_REJECT_UNAUTHORIZED=0 ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop --https
-info setting up automatic SSL certificate (may require elevated permissions/sudo)
-```
 
 ## Are you doing this from Scratch?
 
 clone https://github.com/gatsbyjs/gatsby.git GatsbySource
 
-copy the folder `examples/using-drupal` into your projects `gatbsy` folder
+- copy the folder `examples/using-drupal` into your projects `gatbsy` folder
 
 ```
-name: drupal
+name: drupalsector
 type: drupal9
 docroot: web
 php_version: "8.1"
