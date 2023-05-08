@@ -1,4 +1,4 @@
-### Type definitions saved at 2023-05-07T09:52:47.295Z ###
+### Type definitions saved at 2023-05-08T09:28:00.199Z ###
 
 enum RemoteFileFit {
   COVER
@@ -1800,8 +1800,6 @@ type DrupalBlock__blockSettings {
   status: Boolean
   info: String
   view_mode: String
-  primary: Boolean
-  secondary: Boolean
   follow: Int
   follow_parent: String
   level: Int
@@ -1812,6 +1810,8 @@ type DrupalBlock__blockSettings {
   label_type: String
   label_link: Boolean
   expand: Int
+  primary: Boolean
+  secondary: Boolean
   views_label: String
   use_site_logo: Boolean
   use_site_name: Boolean
