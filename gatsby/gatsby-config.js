@@ -36,5 +36,14 @@ module.exports = {
         update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT,
       },
     },
+    {
+      resolve: `gatsby-source-drupal-menu-links`,
+      options: {
+        typePrefix: "Drupal",
+        baseUrl: process.env.DRUPAL_BASE_URL,
+        apiBase: `jsonapi`, // optional, defaults to `jsonapi`
+        menus: ["main", "main-menu", "account"], // Which menus to fetch, there are the menu IDs.
+      },
+    },
   ],
 }

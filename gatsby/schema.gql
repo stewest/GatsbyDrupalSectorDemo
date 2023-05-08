@@ -1,4 +1,4 @@
-### Type definitions saved at 2023-05-08T09:28:00.199Z ###
+### Type definitions saved at 2023-05-08T20:29:47.800Z ###
 
 enum RemoteFileFit {
   COVER
@@ -631,6 +631,37 @@ type ImageSharp implements Node @childOf(types: ["File"]) @dontInfer {
   ): GatsbyImageData!
   original: ImageSharpOriginal
   resize(width: Int, height: Int, quality: Int, jpegQuality: Int, pngQuality: Int, webpQuality: Int, jpegProgressive: Boolean = true, pngCompressionLevel: Int = 9, pngCompressionSpeed: Int = 4, grayscale: Boolean, duotone: DuotoneGradient, base64: Boolean, traceSVG: Potrace, toFormat: ImageFormat, cropFocus: ImageCropFocus = ATTENTION, fit: ImageFit = COVER, background: String = "rgba(0,0,0,1)", rotate: Int, trim: Float): ImageSharpResize
+}
+
+type MenuItems implements Node @derivedTypes @childOf(types: ["MenuItems"]) @dontInfer {
+  description: String
+  enabled: Boolean
+  expanded: Boolean
+  menu_name: String
+  meta: MenuItemsMeta
+  options: MenuItemsOptions
+  provider: String
+  route: MenuItemsRoute
+  title: String
+  url: String
+  weight: Int
+}
+
+type MenuItemsMeta {
+  entity_id: String
+}
+
+type MenuItemsOptions {
+  fragment: String
+}
+
+type MenuItemsRoute @derivedTypes {
+  name: String
+  parameters: MenuItemsRouteParameters
+}
+
+type MenuItemsRouteParameters {
+  node: String
 }
 
 type DrupalUser__user implements Node @derivedTypes @dontInfer {
