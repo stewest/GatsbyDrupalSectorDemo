@@ -1,23 +1,23 @@
 // https://www.gatsbyjs.com/plugins/gatsby-source-drupal/
 // IF using Gatsby IN a Docker container
-// exports.onCreateWebpackConfig = ({ actions }) => {
-//   actions.setWebpackConfig({
-//     watchOptions: {
-//       aggregateTimeout: 200,
-//       poll: 1000,
-//       ignored: "**/node_modules",
-//     },
-//   })
-// }
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    watchOptions: {
+      aggregateTimeout: 200,
+      poll: 1000,
+      ignored: "**/node_modules",
+    },
+  })
+}
 
 const handlePath = (pathInput, nid) => {
   if (pathInput != null) {
     return pathInput
-  } else if (pathInput == "/home") {
+  } else if (pathInput === "/home") {
     return "/"
-  } else if (pathInput == "/404") {
+  } else if (pathInput === "/404") {
     return "/404"
-  } else if (pathInput == "/403") {
+  } else if (pathInput === "/403") {
     return "/403"
   } else {
     return `/node/${nid}`
