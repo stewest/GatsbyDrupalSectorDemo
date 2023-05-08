@@ -4,6 +4,8 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+console.log(process.env.DRUPAL_BASE_URL)
+console.log(process.env.DRUPAL_BASIC_AUTH_USERNAME)
 module.exports = {
   siteMetadata: {
     title: `Gatsby with Drupal Sector Example`,
@@ -17,7 +19,6 @@ module.exports = {
         baseUrl: process.env.DRUPAL_BASE_URL,
         concurrentFileRequests: 2,
         fastBuilds: true,
-        menus: ["main", "main-menu", "account"],
         basicAuth: {
           username: process.env.DRUPAL_BASIC_AUTH_USERNAME,
           password: process.env.DRUPAL_BASIC_AUTH_PASSWORD,
