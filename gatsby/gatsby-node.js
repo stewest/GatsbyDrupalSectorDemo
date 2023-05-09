@@ -28,7 +28,7 @@ const handlePath = (pathInput, nid) => {
 exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
     query {
-      allDrupalNodePage(limit: 1000) {
+      pages: allDrupalNodePage(limit: 100) {
         edges {
           node {
             drupal_internal__nid
@@ -40,11 +40,23 @@ exports.createPages = async function ({ actions, graphql }) {
           }
         }
       }
+      articles: allDrupalNodeArticle(limit: 100) {
+        edges {
+          node {
+            id
+            title
+            path {
+              alias
+            }
+            drupal_internal__nid
+          }
+        }
+      }
     }
   `)
 
   // Use a template to build out all Node type 'Pages'.
-  data.allDrupalNodePage.edges.forEach((edge) => {
+  data.pages.edges.forEach((edge) => {
     const slug = handlePath(
       edge.node.path.alias,
       edge.node.drupal_internal__nid
@@ -55,6 +67,25 @@ exports.createPages = async function ({ actions, graphql }) {
     actions.createPage({
       path: slug,
       component: require.resolve(`./src/templates/nodepage.js`),
+      context: {
+        slug: slug,
+        id: id,
+      },
+    })
+  })
+
+  // Use a template to build out all Node type 'Pages'.
+  data.articles.edges.forEach((edge) => {
+    const slug = handlePath(
+      edge.node.path.alias,
+      edge.node.drupal_internal__nid
+    )
+
+    const id = edge.node.id
+
+    actions.createPage({
+      path: slug,
+      component: require.resolve(`./src/templates/nodearticle.js`),
       context: {
         slug: slug,
         id: id,
