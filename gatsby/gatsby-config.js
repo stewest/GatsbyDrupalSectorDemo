@@ -24,6 +24,9 @@ module.exports = {
           username: process.env.DRUPAL_BASIC_AUTH_USERNAME,
           password: process.env.DRUPAL_BASIC_AUTH_PASSWORD,
         },
+        // headers: {
+        //   "api-key": process.env.APIKEY,
+        // },
       },
     },
     `gatsby-plugin-offline`,
