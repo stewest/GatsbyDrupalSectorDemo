@@ -6,8 +6,6 @@
 - Install DDEV
 -- https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/
 
-- `mkdir drupal`
-- `mkdir gatsby`
 
 ## Drupal
 - `cd drupal`
@@ -58,6 +56,9 @@ Note: for Preview to work locally, we needed to add the following `-H 0.0.0.0` t
 ## Are you doing this from Scratch?
 
 clone https://github.com/gatsbyjs/gatsby.git GatsbySource
+
+- `mkdir drupal`
+- `mkdir gatsby`
 
 - copy the folder `examples/using-drupal` into your projects `gatbsy` folder
 
