@@ -1,5 +1,10 @@
 # Drupal & Gatsby Demo
 
+The Drupal repo is at https://github.com/stewest/GatsbyDrupalSectorDemo
+
+
+And the Gatsby REPO is
+https://github.com/stewest/GatsbySectorDemo.git and demo URL on https://gatsbysectordemomaster.gatsbyjs.io/
 
 ## Setup
 
